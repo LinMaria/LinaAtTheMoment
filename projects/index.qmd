@@ -79,19 +79,96 @@ This geological sequence stands out due to its distinctive characteristics, feat
 
 The precipitation data for the study area was obtained from the Párraga weather station (Station Code: 52010050), which is managed by Ideam (Instituto de Hidrología, Meteorología y Estudios Ambientales de Colombia). The time series analyzed encompasses 33 years of recorded data, spanning from 1990 to 2023 (Figure ~\ref{fig:annrain}). The study region experiences two distinct rainy seasons: the first occurs from January to May, characterized by relatively lower rainfall compared to the second rainy season, which typically occurs between October and December.
 
+::: {layout-ncol="1"}
+![Total annual rainfall at the Parraga meteorological station.](annualRainfall.png){fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
+:::
+
+The daily time series recorded at the Párraga station exhibits a range of maximum daily precipitation values, varying between 0 mm and 95 mm. The highest recorded value, 94.8 mm, was documented on January 9th, which coincided with the onset of the landslide event (Figure ~\ref{fig:dayrain}). The cumulative rainfall data is meticulously computed over the 30-day period leading up to the triggering of the landslide, revealing an impressive total rainfall accumulation of 539.8 millimeters recorded up to January 9, 2023 (Figure ~\ref{fig:accdayr}).
+
+::: {layout-ncol="1"}
+![Total daily rainfall at the Parraga meteorological station.](DailyRainfall.png){fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
+:::
+
+::: {layout-ncol="1"}
+![Total daily rainfall at the Parraga meteorological station.](AccDailyRainfall.png){fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
+:::
 
 
-# Point cloud registration
+# Methods
 
-As each scan in a TLS campaign has its local coordinate system, accurate registration methods are necessary to create a homogeneous data set in the same coordinate system with seamless overlapping areas of point clouds (Grant et al., 2013). During the registration, algorithms seek a suitable transformation that minimizes the distance between two overlapping point clouds. The output of the registration algorithm is a transformation matrix that represents operations such as translation, rotation, and scaling of the point cloud coordinates.
+Aerial digital photographs of the landslide were captured on multiple occasions between January 9th and March 18th (see Table~\ref{Tab:invent}). Predominantly, these flights were conducted at an altitude of 250 meters. Over the span of 17 days, a total of 22 flights were executed by three organizations specializing in risk management and emergency disaster response: Unidad Nacional para la Gestión del Riesgo (UNGRD), Servicio Geológico Colombiano (SGC), and Policía Nacional (PNAL). Despite the involvement of various institutions, uniformity was maintained in the equipment used, ensuring consistent resolution in the photographs. However, aspects such as flight altitude, coverage area, flight plan design, and the number of captured images exhibited significant variation.
 
-Significant advances have been made in the development of registration algorithms, and a general workflow consisting of coarse global registration of scans, followed by local refinement, has been established (Zhou et al., 2016). As coarse and fine registration form the fundamental building blocks of this project, an explanation of both concepts will be provided in the following section.
+A further challenge encountered in the data acquisition process was the georeferencing of the flights. During the initial flights, markers were not employed, leading to difficulties in precise location mapping. To address this, on May 18th, a set of markers was installed to ensure at least one flight could be accurately georeferenced. However, these newly placed markers proved too small to be discernible in images taken from higher altitudes. Consequently, to enhance the overall georeferencing accuracy of all flights, an independent survey was executed as part of this study, utilizing natural points as reference markers in the final survey.
 
-## Global registration
+## Point Cloud Generation
 
-Prior to fine registration, global registration is performed, which does not require pre-alignment of point clouds. Several algorithms are available for global registration, of which RANSAC (Random Sample Consensus) is a widely used method (Zhou et al., 2016). The RANSAC algorithm is an iterative process that randomly selects a user-defined number of points in one point cloud and searches for their correspondence in the other point cloud. The transformation is estimated and evaluated based on criteria such as the distance correspondence between the two point clouds (Dung et al., 2013). This process is repeated until convergence. The search for correspondence in the point cloud that needs to be aligned (source point cloud) can require a significant number of iterations. To accelerate this process, Fast Point Feature Histograms (FPFH) are calculated (Rusu et al., 2009). FPFH describe the local geometry of a point and its neighboring points. This descriptor enables the RANSAC algorithm to search for nearest neighbors based on the FPFH, thus speeding up the correspondence search. This global registration method is implemented in the Python package `Open3D`.
+The Structure from Motion (SfM) method uses algorithms to identify matching features in a series of overlapping digital images and calculates camera location and orientation from the differential positions of multiple matched features. From these calculations, overlapping imagery is then used to reconstruct a “sparse” or “coarse” 3D point cloud model of the photographed object or surface or scene. \cite{brook2019monitoring}. The software Agisoft Metashape \cite{Metashape2023} was used to undertake the SfM processing. In Metashape, the SFM processing comprises three key steps \cite{MetashapeManual2023}: 
 
-Besides the automatic global registration mentioned above, global registration can also be performed manually using software such as `CloudCompare`. User can select a set of matching points (at least three) in both the target (reference) and source point clouds. Based on this correspondence, the transformation of the source point cloud is calculated.
+
+1. *Alignment*: Involves aerial triangulation and bundle block adjustment, where the software identifies feature points on images, matches them into tie points and determine camera positions, resulting in a tie point cloud and camera positions for depth map determination and 3D reconstruction.
+2. *Surface Generation*: Creates a 3D mesh or 2.5D digital elevation model (DEM), combining photogrammetric depth maps and LiDAR data, which can be textured and exported for various applications.
+3. *Orthomosaic Creation*: Generates a georeferenced orthomosaic by projecting images onto a chosen surface (DEM or mesh), useful for mapping and analysis, including vegetation indices in multispectral imagery projects.
+
+
+In this study we adopted the workflow implemented in Agisoft Metashape, described in the User Manual v2.0 \cite{MetashapeManual2023}. The parameters used are described n the following sections.
+
+## Image loading and chunks definition
+
+Sixteen distinct chunks were produced by importing photographs from selected flights (refer to Table ~\ref{Tab:chunks}), of which five met key selection criteria: a sufficient quantity of photographs, high image quality characterized by proper exposure and sharpness, and extensive coverage of the landslide area. This careful selection was necessary as some flights were tasked with monitoring more restricted sectors of the mass movement, targeting specific areas such as the crown or the Pan-American Highway. For comprehensive area coverage and improved model resolution during that timeframe, photographs from January 18th and 19th were merged in one single chunk.
+
+| Chunks       | Cameras | Points    | Markers    | Processed |
+|--------------|---------|-----------|------------|-----------|
+| 1/14/2023    | 1491    | 880,613   | 19 markers | X         |
+| 1/17/2023    | 567     | 436,618   | 4 markers  |           |
+| 1/18-19/2023 | 878     | 1,666,175 | 17 markers | X         |
+| 1/19/2023    | 369     | 387,054   |            |           |
+| 1/20/2023    | 196     | 194,101   |            |           |
+| 1/26/2023    | 332     | 352,573   |            |           |
+| 1/30/2023    | 321     | 351,487   |            |           |
+| 2/3/2023     | 418     | 403.19    |            |           |
+| 2/6/2023     | 331     | 336,810   |            |           |
+| 2/11/2023    | 576     | 627,729   |            |           |
+| 2/16/2023    | 329     | 346,862   |            |           |
+| 2/19/2023    | 442     | 459,783   |            | X         |
+| 3/6/2023     | 330     | 324,661   |            | X         |
+| 3/21/2023    | 331     | 352.909   |            |           |
+| 3/30/2023    | 328     | 327,605   |            |           |
+| 5/18/2023    | 333     | 243,261   |            | X         |
+
+## Photos alignment and filtering
+
+In each chunk, the photographs underwent an alignment process with the accuracy setting set to high, utilizing equipment source coordinates as a reference point. Camera optimization was conducted, selecting the estimation of the covariance of tie points. Subsequently, apparent outliers were removed from the sparse cloud manually to diminish potential reconstruction inaccuracies. Additional refinement was carried out by filtering based on tie point covariance and uncertainties, employing Metashape's integrated Python scripting capabilities for a more precise adjustment (Figure ~\ref{Fig:covar}).
+
+::: {layout-ncol="1"}
+![Tie point covariances obtained after filterin](covariance.png){fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
+:::
+
+## Dense Point Cloud generation
+
+For all chosen chunks, a dense 3D point cloud was constructed employing high-quality settings and mild depth filtering. This detailed point cloud serves as the foundation for generating Digital Surface Models (DSM) and orthomosaics. Additional settings were selected to reuse depth maps, calculate point colors and calculate point confidence (Figure ~\ref{fig:dense}).
+
+::: {layout-ncol="1"}
+![Dense point cloud for 14/01/2023](denseall.png){fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
+:::
+
+## Natural points definition and GNSS survey
+
+To accurately reference the point clouds, a series of natural markers were established to guarantee high-precision (centimeter-level) localization that was readily identifiable in the field. Utilized reference points included distinct features such as sewer edges, fence corners, and light posts (see Figure ~\ref{fig:marker12}). Out of the 27 natural markers delineated (see Figure ~\ref{fig:marker}), only 21 were successfully surveyed on-site. The survey faced several challenges, including the demolition of referenced structures, obscuring of markers by debris or soil, and inaccessible locations of certain points. The coordinates for each marker were recorded using a Trimble SPS855 GNSS Modular Receiver.
+
+::: {layout-ncol="1"}
+![Example of a marker defined](marker12.png){fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
+:::
+
+::: {layout-ncol="1"}
+![Markers defined](markers.png){fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
+:::
+
+Following the download of raw data from the Trimble receiver, the post-processing software GrafNav was employed. GrafNav is an advanced GNSS post-processing suite that supports kinematic and static analysis with an advanced processing engine for GPS, GLONASS, and BeiDou signals. To refine the data, corrections were applied using the Popayan station (POPA), which is the station nearest to the collection site. The required data were acquired from the Colombian open data portal (https://www.colombiaenmapas.gov.co/). Both the RINEX files from the field-surveyed markers and the permanent station were inputted into GrafNav to execute the correction process. The precision-adjusted positions of the markers are shown in Table ~\ref{Tab:gnss}.
+
+## Chunk alignment
+
+For a precise alignment of point clouds, the process begins with the correction of a designated reference point cloud; in this case, the cloud dated 01/14/2023 is used. The coordinates of the markers are revised using the data acquired from the recent field campaign. Following this update, camera parameters are re-optimized, and a new dense point cloud is generated. This newly referenced point cloud then serves as the reference for aligning subsequent point clouds through the point-based method, a technique available to align chunks within Agisoft.
+
 
 ## ICP registration
 
@@ -118,208 +195,8 @@ Pulli (1999) emphasize the advantages of the point-to-plane method compared to t
 -   The point-to-point method typically requires at least ten times more point matching and alignment iterations than the point-to-plane method.
 -   The point-to-plane method is not significantly slowed down by false point pairs since each point can slide along the tangent plane of its corresponding point.
 
-# Methods
 
-Due to alignment issues during acquisition, as indicated in the section "alignment consistency" it was not possible to directly merge the raw point clouds from each scan to obtain a 3-D model of the Golm campus. To address the research questions, different alignment approaches and algorithms were applied. Analysis steps, necessary data pre-processing, and evaluation metrics of the results are described below.
 
-## Analysis
-
-Since fine registration requires pre-aligned point clouds, the scans with a median cloud-to-cloud distance of more than 10 cm were removed (a total of 38 scans; see Figure 6). The RANSAC global registration approach and manual point pair selection were then applied to roughly align the 38 excluded ones to the remaining scans. Two separate alignment approaches were subsequently performed using both variants of the ICP algorithm.
-
-1.  For the first approach, a `loop closure method` was implemented by starting with the first scan and aligning the second scan to the first scan. The aligned scans were merged, and the iterative process was continued by moving on to the next scan until all 222 scans were aligned and merged. To ensure a systematic approach, scans were aligned in a serpentine pattern, starting in the eastern part of the campus and continuing until the first loop was closed in the western part. Subsequently, all other scans between this serpentine pattern were aligned to the framework of the first aligned scans, resulting in the closure of the loop several times. This approach was repeated for both point-to-point and point-to-plane variants of ICP to compare their performance.
-
-2.  In the second approach, an airborne laser scanning (ALS) dataset of the campus was used as the target point cloud, and each TLS scan was aligned as the source point cloud to it. This approach was repeated for both variants of the ICP algorithm (point-to-point and point-to-plane) to compare whether a different target point cloud affected the result.
-
-The analyses were performed using Python 3.9, utilizing two primary packages: `laspy` for reading and writing .laz files, and `open3d` for implementing the ICP algorithms. The software `CloudCompare` was used for manual global registration.
-
-## Data preparation
-
-Each TLS scan consists of about 10 million data points. Processing such a large amount of data has a significant impact on the computation time. Therefore, each scan was subject to the following pre-processing steps prior to analysis:
-
-**1. Subsampling to 10 centimeters**
-
-The subsampling of the point clouds was performed using a voxel-grid filter. This approach assigns a 3-D grid of 10 cm spacing voxels to the point cloud, and samples only the closest point to the center of each voxel. This reduces the amount of data and evens out varying point density.
-
-**2. Outlier filter**
-
-A statistical filter was applied to identify outliers in the point cloud. For each point, the mean distance to its `n` nearest neighbors was computed, and the overall standard deviation was determined. Points were classified as outliers if the mean distance to their `n` nearest neighbors exceeded the distance threshold of `m` multiplied by the overall standard deviation. For this analysis `n` was set to 12, and `m` to 3.
-
-Additionally, significant noise artifacts (Figure 3) that remained after the statistical outlier filter were manually removed.
-
-**3. Remove non-planar features**
-
-The Golm campus contains both planar objects such as building facades and streets, and non-planar objects like trees. Trees can have slightly varying shapes across scans due to the motion of the leaves, which potentially affects the accuracy of the ICP alignment. To mitigate this issue, non-planar objects were filtered out for the analysis by exploiting the calculation of geometric features. Geometric features, such as `planarity`, describe the shape of a point based on its local neighborhood. For example, a point in a tree crown would have a low `planarity` value, while a point on a street would have a high value.
-
-The computation of the geometric feature `planarity` can be summarized as described by Dittrich et al. (2017):
-
-1.  The 3D covariance matrix based on the point's neighborhood is calculated using a fixed radius (e.g., 1 m)
-2.  The eigenvectors ($$e_{1}$$, $$e_{2}$$, $$e_{3}$$) and eigenvalues ($$\lambda_{1}$$, $$\lambda_{2}$$, $$\lambda_{3}$$) of the 3D covariance matrix are calculated
-3.  `Planarity` is determined considering the three eigenvalues ($$\lambda_{1}$$, $$\lambda_{2}$$, $$\lambda_{3}$$): on a planar surface eigenvalues $$\lambda_{1}$$ and $$\lambda_{2}$$ are larger than $$\lambda_{3}$$. Therefore, `planarity` ($$P_{\lambda}$$) is calculated based on the following ratio: $$  P_{\lambda} = \frac{\lambda_{2} - \lambda_{3}}{\lambda_{1}}$$
-
-For the analysis, a `planarity` threshold of 0.7 was selected. The value was arbitrarily chosen but led to reasonable filtering results as shown in Figure 7. As an example, Figure 7a displays the original point cloud data, while Figure 7b shows the results of the data after the data preparation stages.
-
-<center>
-
-<figure>
-
-<a href="07_TLS_processing_before_after.png"><img src="https://github.com/UP-RS-ESP/up-rs-esp.github.io/raw/master/_posts/TLS_Golm_images/07_TLS_processing_before_after.png"/></a>
-
-<figcaption>Figure 7: Example of data preparation. Figure A displays the original point cloud data with all features included, while Figure B shows the subsampled and non-planarity filtered point cloud data.</figcaption>
-
-</figure>
-
-</center>
-
-## Evaluation metrics
-
-Three metrics were used in this project to evaluate the quality of the alignment for both ICP variants and alignment methods.
-
-**Surface roughness**
-
-Surface roughness was utilized for visual inspection rather than quantitative measurement. Surface roughness is calculated as the distance between a point and the best-fitting plane determined by its nearest neighbors. If the scans overlap perfectly on a smooth surface, such as a road, the surface roughness is minimal. Conversely, the surface roughness values increase as the alignment deteriorates.
-
-**Median cloud-to-cloud distance**
-
-The median cloud-to-cloud distance was determined by merging all scans and then removing one scan position at a time for analysis. For each point in the removed scan, the distance to its nearest neighbor in the remaining scans was calculated. The median distance was calculated using all the distances. The removed scan was then merged back, and the same procedure was repeated for the next scan position. The median cloud-to-cloud distance is less affected by outliers in the point clouds.
-
-**dRMS**
-
-A slightly modified version of the dRMS used by Li et al. (2020) was utilized to give more weight to the misaligned and outlier points. The dRMS provides a measure of the average distance between corresponding points in two aligned point clouds. The smaller the dRMS, the higher the accuracy of the alignment. For a source point cloud A and a target (reference) point cloud B, the dRMS can be expressed as:
-
-$$ dRMS(A,B)=\sqrt{\frac{1}{n}\sum_{i=1}^{n}\left ( \left \| a_{i}-b_{j} \right \| \right )^2} $$
-
-where:
-
--   $$a_{i}$$ is the point in the source point cloud corresponding to $$b_{j}$$ in the target point cloud $$n$$ the number of points in $$A$$
-
-# Results
-
-## Global alignment
-
-The automated approach using the RANSAC algorithm supported by FPFH was initially attempted for alignment but was later discarded due to significant runtime issues and the inability to achieve convergence. Especially in the part of Figure 5, the algorithm was not able to come up with a satisfactory solution for the fine registration. Therefore, the manual approach was applied, which involved selecting corresponding point pairs in the target and source point clouds, resulting in successful alignment, as shown in Figure 8. However, some parts of the campus were still misaligned, indicated by sudden changes in surface roughness (Figure 8).
-
-<center>
-
-<figure>
-
-<a href="08_Building2729_surfaceroughness.png"><img src="https://github.com/UP-RS-ESP/up-rs-esp.github.io/raw/master/_posts/TLS_Golm_images/08_Building2729_surfaceroughness.png"/></a>
-
-<figcaption>Figure 8: Building 27/29 after global alignment, showing well-represented building walls. However, surface roughness exceeding 20 cm (yellow areas) reveals misalignment of scans in the z-direction.</figcaption>
-
-</figure>
-
-</center>
-
-## Fine registration
-
-**Loop closure approach**
-
-Overall, the point-to-point ICP variant using the loop closure approach achieved a good alignment result. Figure 9a indicates that only three scans remained above the 10 centimeter threshold for the median cloud-to-cloud distance threshold. Additionally, after visual inspection using surface roughness, it was observed that two of these scans were not misaligned but rather had poor overlap, resulting in an overall increase in cloud-to-cloud distance. Therefore, almost all scans were correctly aligned using this method, with a majority having below 5 cm cloud-to-cloud distance.
-
-On the other hand, the point-to-plane ICP variant's alignment performance was overall poor, with 87 scans having a cloud-to-cloud distance of more than 10 centimeters (Figure 9b). This method even deteriorated the initial alignment of the raw data (Figure 6).
-
-<center>
-
-<figure>
-
-<a href="09_LoopClosure_Barplot.png"><img src="https://github.com/UP-RS-ESP/up-rs-esp.github.io/raw/master/_posts/TLS_Golm_images/09_LoopClosure_Barplot.png"/></a>
-
-<figcaption>Figure 9: Comparison of results of the loop closure approach: (A) Point-to-point variant leads to an overall good alignment result. The bars sticking out are aligned scans, however, with poor overlap and thus increased value; (B) In contrast, the point-to-plane variant showed significant misalignment for many scans, with over 80 scans having a median cloud-to-cloud distance greater than 10 cm.</figcaption>
-
-</figure>
-
-</center>
-
-**ALS reference approach**
-
-In the case of using the ALS data set as the reference point cloud, the point-to-point ICP variant had a slightly worse alignment performance compared to the loop closure approach, as depicted in Figure 10a. Despite this, the point-to-point approach still resulted in an improvement over the alignment of the raw data, with 18 scans having a median cloud-to-cloud distance greater than 10 centimeters. The scans displayed good alignment agreement along the z-direction but showed deficient alignment in the x- and y-directions, particularly along building walls.
-
-The point-to-plane ICP variant performed better compared to the loop closure approach, with 28 scans exhibiting a median cloud-to-cloud distance greater than 10 centimeters (Figure 10b). However, the point-to-plane variant still underperformed in comparison to the point-to-point variant.
-
-<center>
-
-<figure>
-
-<a href="10_ALSReference_Barplot.png"><img src="https://github.com/UP-RS-ESP/up-rs-esp.github.io/raw/master/_posts/TLS_Golm_images/10_ALSReference_Barplot.png"/></a>
-
-<figcaption>Figure 10: Comparison of results of the ALS reference approach: (A) Point-to-point variant shows misalignment only for individual scans, particularly scan 180-200 where building walls are poorly represented; (B) Point-to-plane variant shows misalignment for more scans, with five scans having a median cloud-to-cloud distance greater than 1 m.</figcaption>
-
-</figure>
-
-</center>
-
-**Overall performance and final 3-D model**
-
-The overall performance of the two ICP variants and the two alignment approaches are shown in the table below. The evaluation metrics, including the dRMS and median cloud-to-cloud distance, suggest that the point-to-point ICP variant using the loop closure approach performed best in this analysis. Additionally, the point-to-point ALS reference approach also demonstrated reasonable results. Conversely, the point-to-plane variant performed worse in both metrics, indicating that it negatively impacted the alignment of the raw data.
-
-| Method                        | dRMS      | Median cloud-to-cloud distance |
-|-------------------------------|-----------|--------------------------------|
-| Raw data                      | 0.633     | 0.157                          |
-| Loop closure: Point-to-Point  | **0.433** | **0.038**                      |
-| Loop closure: Point-to-Plane  | 0.767     | 0.207                          |
-| ALS reference: Point-to-Point | 0.434     | 0.059                          |
-| ALS reference: Point-to-Plane | 0.859     | 0.460                          |
-
-The final 3-D model of the Golm campus was created using the registered data from the best alignment result achieved through the point-to-point loop closure approach (Figure 11).
-
-<center>
-
-<figure>
-
-<a href="11_final_viz_golm.png"><img src="https://github.com/UP-RS-ESP/up-rs-esp.github.io/raw/master/_posts/TLS_Golm_images/11_final_viz_golm.png"/></a>
-
-<figcaption>Figure 11: Final 3-D model of the Golm campus at the University of Potsdam</figcaption>
-
-</figure>
-
-</center>
-
-# Discussion and conclusion
-
-## Loop closure vs. ALS reference approach
-
-The loop closure approach has been shown to achieve accurate results in the x- and y-directions but reveals issues in the z-direction. This can be attributed to slight alignment errors that propagate through the point cloud. These errors become evident when closing the loops and are even larger when the overlap between the scans is not given.
-
-On the other hand, the ALS reference approach performs well in the z-direction due to the high overlap of ALS and TLS point clouds. However, this method shows lower accuracy in the x- and y-directions, which is likely due to the fact that the ALS dataset does not sufficiently represent the facades of the buildings.
-
-For future work, a combination of the loop closure and ALS reference approaches could be beneficial to improve the overall alignment. The loop closure approach could be used first to align the point clouds in the x- and y-directions, followed by the ALS approach to refine the alignment only in the z-direction.
-
-## Point-to-point vs. point-to-plane ICP
-
-Given the conditions of this project, the point-to-point ICP algorithm outperformed the point-to-plane ICP algorithm and resulted in an overall improvement of the registered data compared to the raw data. Considering the significant number of scans that were misaligned after the data acquisition, the point-to-point algorithm was able to refine the registration with an accuracy of centimeters to millimeters. The removal of non-planar and slightly moving features, such as leaves or branches, proved to be beneficial for the algorithm. This is because the point-to-point variant of the ICP algorithm aims to find identical points in two different point clouds, making it more effective to use only man-made features that are consistent across the scans.
-
-While the point-to-point variant yielded superior results, the point-to-plane variant underperformed and even deteriorated the raw data alignment. This result was unexpected given that the point-to-plane variant is commonly regarded as more realistic due to the challenge of identifying identical points in two distinct point clouds. The inaccurate outcomes of the point-to-plane algorithm can be attributed to two main factors:
-
-1.  Restricting the point clouds to planar surfaces was effective for the point-to-point variant but may not have been optimal for the point-to-plane variant. The campus environment, consisting of buildings with large walls lacking distinctive features, posed a challenge for the point-to-plane variant. As a result, the algorithm had difficulty in finding matching features, resulting in the slipping of two large walls.
-
-2.  The algorithm randomly oriented the point normals of the point clouds. Figure 12 shows an example of a point cloud with three walls and their corresponding point normals. Ideally, all point normals should face the direction of the scanner. However, since the scanner's location was not specified, the point normals were randomly oriented in both possible directions. Consequently, the algorithm projected the point normals onto the planes of non-corresponding points, causing significant shifts in the x- and y-directions, as observed in our analysis.
-
-<center>
-
-<figure>
-
-<a href="12_Normal_orientation.png"><img src="https://github.com/UP-RS-ESP/up-rs-esp.github.io/raw/master/_posts/TLS_Golm_images/12_Normal_orientation.png"/></a>
-
-<figcaption>Figure 12: Figure A is showing a point cloud with three walls and their computed normals in Figure B</figcaption>
-
-</figure>
-
-</center>
-
-## Impact of the TLS sampling pattern on alignment performance
-
-The RIEGL VZ-400i and other similar scanners are equipped with onboard alignment capabilities, which can eliminate the need for post-processing alignment if a suitable sampling pattern is employed. However, as mentioned in the introduction, the scanner's alignment capabilities are limited when either the GNSS or IMU system is not performing as expected, often due to factors such as weak signal strength, large distances between scans, or the absence of re-initialization at the last scan position after the scanner is turned off. The combined effect of these factors can lead to the alignment issues encountered after the data acquisition in this project.
-
-While this project demonstrated that misalignment issues in a large data set with over 200 scans can be resolved through global alignment and refined alignment using ICP, these processing steps can be avoided or simplified with consistent TLS sampling. Two crucial aspects to consider are short distances (10-20 m) between scans and a consistent sampling pattern in which each scan has a follow-up scan and no location is scanned more than once. Short distance ensures adequate overlap of point clouds from different scans, enabling matching of the same objects during alignment. A consistent scan pattern is essential for proper alignment of subsequent scans, as jumping back and forth between scans can disrupt onboard alignment and potentially lead to misalignment. Keeping these considerations in mind when conducting TLS scanning can help streamline the alignment process and ensure obtaining an accurate 3-D model.
-
-# Important takeaways of the TLS project
-
--   A consistent TLS sampling pattern with each scan having at least two close-by neighboring scans should be followed to ensure reliable on-board registration for the RIEGL VZ-400i scanner
--   Short distances (10-20 m) between scans to provide enough overlap can facilitate point cloud registration tasks
--   The combination of global and fine registration through the ICP algorithm is able of addressing large misalignments even between scans with little overlap
--   The performance of the point-to-point ICP variant benefits from removing non-planar features as handling slightly moving objects across the scans can be challenging
--   The implementation of the point-to-plane ICP variant requires careful consideration (e.g., properly oriented point normals) but has the potential to further improve the results of this project
--   The combination of the loop-closure approach using TLS scans for x and y alignment and ALS data for z alignment shows promise for the large area covered in this project
 
 # References
 
