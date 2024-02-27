@@ -30,7 +30,7 @@ Please feel free to [contact me](mailto:lina.perez.garcia@fu-berlin.de) if you h
 
 ```{=html}
 <div  style="margin: 30px; text-align: center;">
-<a class="btn btn-primary" href="https://www.marvinschmitt.com/blog/website-tutorial-quarto/" role="button" target="_blank" style="padding: 15px 30px;">View the tutorial for this template (+ download link)</a>
+<a class="btn btn-primary" href="https://linmaria.github.io/LinaAtTheMoment/projects/" role="button" target="_blank" style="padding: 15px 30px;">Take a look at my current projects</a>
 </div>
 ```
 

@@ -5,7 +5,6 @@ website:
   title: "Lina Maria Pérez"                                # Your name
   description: "Healing the soul through the experience and love of the natural world"   # A brief slogan (optional)
   image: img/logo.png
-  
   favicon: img/favicon.png
   
   # start of the navigation bar at the top of the website
@@ -17,15 +16,13 @@ website:
     left:
       - text: "Projects"
         href: projects/index.qmd
-      - text: "Photography"
-        href: photography/index.qmd
       - text: "CV"
         href: cv/index.qmd
     
     # your social media handles
     right:
-      - icon: folder-symlink
-        href: https://blogs.fu-berlin.de/reseda/
+      - icon: goodreads
+        href: https://www.goodreads.com/user/show/23564985-lina-m
       - icon: twitter
         href: https://twitter.com/MarvinSchmittML
       - icon: linkedin
@@ -42,11 +39,9 @@ website:
     type: textbox
   page-footer: 
     left: |
-      <span class="faux-block">&#169; 2023 Marvin Schmitt CC BY-SA 4.0</span>
-    center: |
-      <span class="faux-block"><a href="https://www.marvinschmitt.com/blog/website-tutorial-quarto/">View the tutorial for this template!</a></span>
+      <span class="faux-block">&#169; 2024 Lina Pérez</span>
     right: |
-      <span class="faux-block"><a href="https://github.com/marvinschmitt/quarto-website-template/">View source on GitHub</a></span>
+      <span class="faux-block"><a href="https://github.com/LinMaria/LinaAtTheMoment">View source on GitHub</a></span>
 
 project:
   type: website
