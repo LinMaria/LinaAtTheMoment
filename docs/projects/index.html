@@ -9,7 +9,7 @@
 <meta name="author" content="Lina Pérez">
 <meta name="dcterms.date" content="2024-03-01">
 
-<title>Lina Maria Pérez - Structure from Motion Application for Landslide Char-acterization and Monitoring: The Rosas Landslide case study,Cauca Colombia</title>
+<title>Lina Maria Pérez - Structure from Motion Application for Landslide Characterization and Monitoring: The Rosas Landslide case study,Cauca Colombia</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -138,9 +138,10 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#geological-setting" id="toc-geological-setting" class="nav-link" data-scroll-target="#geological-setting">Geological setting</a></li>
   </ul></li>
-  <li><a href="#landslide-characterization" id="toc-landslide-characterization" class="nav-link" data-scroll-target="#landslide-characterization">Landslide characterization</a>
+  <li><a href="#landslide-event-characterization" id="toc-landslide-event-characterization" class="nav-link" data-scroll-target="#landslide-event-characterization">Landslide event characterization</a>
   <ul class="collapse">
-  <li><a href="#alignment-consistency" id="toc-alignment-consistency" class="nav-link" data-scroll-target="#alignment-consistency">Alignment consistency</a></li>
+  <li><a href="#geology-of-the-landslide-site" id="toc-geology-of-the-landslide-site" class="nav-link" data-scroll-target="#geology-of-the-landslide-site">Geology of the landslide site</a></li>
+  <li><a href="#rainfall" id="toc-rainfall" class="nav-link" data-scroll-target="#rainfall">Rainfall</a></li>
   </ul></li>
   <li><a href="#point-cloud-registration" id="toc-point-cloud-registration" class="nav-link" data-scroll-target="#point-cloud-registration">Point cloud registration</a>
   <ul class="collapse">
@@ -174,7 +175,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Structure from Motion Application for Landslide Char-acterization and Monitoring: The Rosas Landslide case study,Cauca Colombia</h1>
+<h1 class="title">Structure from Motion Application for Landslide Characterization and Monitoring: The Rosas Landslide case study,Cauca Colombia</h1>
 </div>
 
 
@@ -255,47 +256,31 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </section>
 </section>
-<section id="landslide-characterization" class="level1">
-<h1>Landslide characterization</h1>
-<p>One of the advantages of TLS is that a high density of points can be captured per scan. In our case, around 10 million points per scan were obtained for most of the scans. However, the high point density can also result in the presence of noisy points in the point cloud, which can pose a challenge in data processing and analysis. One of the main causes of noise in our scans was reflection issues caused by windows. Due to the double bounce effect of the laser reflecting off a window and an object back to the scanner, the object (e.g., trees or building facades) is projected behind the window and may be misplaced in the point cloud after merging multiple scans (Figure 3). To avoid problems with the alignment of overlapping point clouds, these noise artifacts had to be removed.</p>
-<center>
-<figure class="figure">
-<p><a href="03_Noise.png"><img src="https://github.com/UP-RS-ESP/up-rs-esp.github.io/raw/master/_posts/TLS_Golm_images/03_Noise.png" class="figure-img"></a></p>
-<figcaption class="figure-caption">
-Figure 3: Merged full resolution scans including noise. The long stripes of points demonstrate the susceptibility of TLS data to window reflections of the laser. In the lower and upper middle parts, reflections are projected onto the street.
-</figcaption>
+<section id="landslide-event-characterization" class="level1 page-columns page-full">
+<h1>Landslide event characterization</h1>
+<p>The Rosas mass movement, situated within the micro-basin of Chontaduro creek, is characterized as an active rotational landslide of a complex nature, exhibiting retrogressive and widening behavior. This landslide initiation point is positioned 900 meters from the summit of Broncazo Hill and 700 meters from its base (Figure ~<span class="math inline">\(\ref{fig:annrain}\)</span>).</p>
+<div class="quarto-layout-panel page-columns page-full">
+<div class="quarto-layout-row quarto-layout-valign-top page-columns page-full">
+<div class="quarto-layout-cell page-columns page-full" style="flex-basis: 100.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="landslide1.png" class="img-fluid figure-img" alt="Rosas, Cauca - Colombia"></p>
+<figcaption class="figure-caption margin-caption">Panoramic view of Rosas landslide. Sourced from InformeVisitaEmergencia</figcaption>
 </figure>
-</center>
-<section id="alignment-consistency" class="level2">
-<h2 class="anchored" data-anchor-id="alignment-consistency">Alignment consistency</h2>
-<p>Figure 4 shows the bird’s eye view of all merged individual point clouds immediately after the data collection and thus the starting point of our 3-D model of the Golm campus. Individual point clouds were preprocessed after the acquisition, including subsampling, tree removal, and noise reduction (see methods for more details). Upon initial inspection of the 3-D visualization, it is evident that building facades are stacked, particularly in the central area of the campus. Even without zooming in, it is apparent that some scans were not accurately positioned or aligned with the scanner’s onboard processing platform. This impression is further confirmed by looking at building 27/29 of the campus from a different perspective (Figure 5). Several scans appear to be distorted and protruding into the courtyard.</p>
-<center>
-<figure class="figure">
-<p><a href="04_RawData_Misalignment.png"><img src="https://github.com/UP-RS-ESP/up-rs-esp.github.io/raw/master/_posts/TLS_Golm_images/04_RawData_Misalignment.png" class="figure-img"></a></p>
-<figcaption class="figure-caption">
-Figure 4: Bird’s eye view of all merged individual point clouds after data acquisition. Particularly large errors in the initial alignment are visible in the center of the image (building 27/29).
-</figcaption>
-</figure>
-</center>
-<center>
-<figure class="figure">
-<p><a href="05_RawData_Misalignment_Building2729.png"><img src="https://github.com/UP-RS-ESP/up-rs-esp.github.io/raw/master/_posts/TLS_Golm_images/05_RawData_Misalignment_Building2729.png" class="figure-img"></a></p>
-<figcaption class="figure-caption">
-Figure 5: Full resolution data of building 27/29, showing significant misalignment of scans
-</figcaption>
-</figure>
-</center>
-<p>As seen above, there were several unaligned scans after the data collection, and manually checking for them was tedious. To automate this process, we calculated the cloud-to-cloud distances between each scan and all the other scans. We achieved this by merging all scans and iteratively removing one scan position for analysis. The cloud-to-cloud distance was then calculated and the scan was merged back with the entire point cloud. This process was repeated for each scan position. Figure 6 displays the results of the cloud-to-cloud distance analysis. The upper plot illustrates the minimum distance for each point in each of the 222 scans to the closest neighboring point in another scan. The lower plot presents the median cloud-to-cloud distance for each scan, taking all points into account.</p>
-<p>The upper plot in Figure 6 should ideally show bright pixels along the x-axis, meaning that each point has a close neighbor point in another scan. This is the first indication of good alignment between scans, although it does not guarantee perfect alignment of the entire 3-D model as scans can be systematically shifted. The ground plot should have median cloud-to-cloud distances close to zero. However, large gaps with dark values in the upper plot and bars sticking out in the lower plot (e.g., scan ID 110-118) can be observed, and are indicative of misaligned scans. Setting an arbitrary threshold of 10 cm for cloud-to-cloud misalignment would identify 38 out of 222 scans as misaligned (red dots in Figure 6), while a threshold of 5 cm would already identify 99 unaligned scans.</p>
-<center>
-<figure class="figure">
-<p><a href="06_RawData_cloudtocloud_distance.png"><img src="https://github.com/UP-RS-ESP/up-rs-esp.github.io/raw/master/_posts/TLS_Golm_images/06_RawData_cloudtocloud_distance.png" class="figure-img"></a></p>
-<figcaption class="figure-caption">
-Figure 6: The upper plot displays the minimum distance between every point in the 222 scans and its closest neighbor in any other scan. The distance values of the points are binned and represented by dark color (few points) and bright color (many points at that distance). The lower plot shows the median cloud-to-cloud distance for each scan, which is calculated by taking the minimum distances of all points in a scan and calculating the median value.
-</figcaption>
-</figure>
-</center>
-<p>Visual inspection and cloud-to-cloud distance analysis indicate that the source data are unsuitable for direct use. To create a 3-D model of the Golm campus, individual alignment of the scans was required. The next chapter addresses this topic in detail, followed by the methods used for alignment.</p>
+</div>
+</div>
+</div>
+</div>
+<p>The landslide displays distinct patterns of movement and failure mechanisms across its various sections. In the uppermost region, known as the crown, where the movement commences, displacements are attributed to a rotational failure mechanism. Moving to the flanks, which constitute the lateral sides of the landslide, translational faults predominate. Within the body of the landslide, one observes intense deformation, sinking, and the formation of cracks, both transverse and parallel to the primary crown (Fig pics). In the lowermost part of the movement, termed the leg, situated furthest from the crown, translational landslides, soil block falls, and flows of earth, debris, and mud have been observed. These flows are channeled through areas with lower slopes. The dynamic interplay of these movements signifies the complex nature of the landslide, with its activity and behavior evolving in response to variations in water availability in the upper part of the basin.</p>
+<p>The initial phase of the mass movement was characterized by a rotational slide, evidenced by a semicircular curved and concave upward rupture surface. This phase exposed a vertical scarp reaching heights of up to 20 meters, composed of alternating layers of residual ash soils and pyroclastic flows from the Galeón Formation. Subsequently, a portion of the body adjacent to the crown tilted backward due to the concavity of the failure surface, resulting in ground subsidence. When the central region of the landslide became fully saturated with water, copious flows of earth and rock emanated from both sides of the landslide, as well as from its center.</p>
+<section id="geology-of-the-landslide-site" class="level2">
+<h2 class="anchored" data-anchor-id="geology-of-the-landslide-site">Geology of the landslide site</h2>
+<p>In the microbasin of Chontaduro creek, a geological sequence unfolds, comprising both epiclastic and volcanic rocks attributed to the Galeón Formation (TQpg). Notably, these formations are prominently exposed in areas such as Cerro Broncazo and its environs, encompassing the Quilcacé and Esmita rivers. In these regions, the volcaniclastic deposits can attain substantial thicknesses, reaching up to 800 meters.</p>
+<p>This geological sequence stands out due to its distinctive characteristics, featuring abrupt scarps and gently sloping layers. These geological features are attributed by researchers to recent tectonic movements associated with the Mosquerillo-La Tetilla fault, a component of the Romeral Fault System.</p>
+</section>
+<section id="rainfall" class="level2">
+<h2 class="anchored" data-anchor-id="rainfall">Rainfall</h2>
+<p>The precipitation data for the study area was obtained from the Párraga weather station (Station Code: 52010050), which is managed by Ideam (Instituto de Hidrología, Meteorología y Estudios Ambientales de Colombia). The time series analyzed encompasses 33 years of recorded data, spanning from 1990 to 2023 (Figure ~<span class="math inline">\(\ref{fig:annrain}\)</span>). The study region experiences two distinct rainy seasons: the first occurs from January to May, characterized by relatively lower rainfall compared to the second rainy season, which typically occurs between October and December.</p>
 </section>
 </section>
 <section id="point-cloud-registration" class="level1">

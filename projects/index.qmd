@@ -1,6 +1,6 @@
 ---
 page-layout: full
-title: 'Structure from Motion Application for Landslide Char-acterization and Monitoring: The Rosas Landslide case study,Cauca Colombia'
+title: 'Structure from Motion Application for Landslide Characterization and Monitoring: The Rosas Landslide case study,Cauca Colombia'
 image: densedetail.png
 author: "Lina Pérez"
 author_profile: true
