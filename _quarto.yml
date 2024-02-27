@@ -2,9 +2,9 @@
 
 # website settings
 website:
-  title: "RESEDA_quarto"                                # Your name
-  description: "RESEDA - Basics of remote sensing"   # A brief slogan (optional)
-  image: img/reseda-logo.png
+  title: "LinaMarPerez-Blog"                                # Your name
+  description: "Healing the soul through the experience and love of the natural world"   # A brief slogan (optional)
+  image: img/logo.png
   
   favicon: img/favicon.png
   
