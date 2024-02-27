@@ -94,6 +94,7 @@ The daily time series recorded at the Párraga station exhibits a range of maxim
 :::
 
 
+
 # Methods
 
 Aerial digital photographs of the landslide were captured on multiple occasions between January 9th and March 18th (see Table~\ref{Tab:invent}). Predominantly, these flights were conducted at an altitude of 250 meters. Over the span of 17 days, a total of 22 flights were executed by three organizations specializing in risk management and emergency disaster response: Unidad Nacional para la Gestión del Riesgo (UNGRD), Servicio Geológico Colombiano (SGC), and Policía Nacional (PNAL). Despite the involvement of various institutions, uniformity was maintained in the equipment used, ensuring consistent resolution in the photographs. However, aspects such as flight altitude, coverage area, flight plan design, and the number of captured images exhibited significant variation.
