@@ -54,10 +54,9 @@ The geological setting of the study area is profoundly influenced by its locatio
 ![Geological map of the study area. Sourced from sgc2020](GELOGY.jpg){fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
 :::
 
-
 # Landslide event characterization
 
-The Rosas mass movement, situated within the micro-basin of Chontaduro creek, is characterized as an active rotational landslide of a complex nature, exhibiting retrogressive and widening behavior. This landslide initiation point is positioned 900 meters from the summit of Broncazo Hill and 700 meters from its base (Figure ~\ref{fig:annrain}).
+The Rosas mass movement, situated within the micro-basin of Chontaduro creek, is characterized as an active rotational landslide of a complex nature, exhibiting retrogressive and widening behavior. This landslide initiation point is positioned 900 meters from the summit of Broncazo Hill and 700 meters from its base (Figure \~\ref{fig:annrain}).
 
 ::: {layout-ncol="1"}
 ![Panoramic view of Rosas landslide. Sourced from InformeVisitaEmergencia](landslide1.png){fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
@@ -67,8 +66,6 @@ The landslide displays distinct patterns of movement and failure mechanisms acro
 
 The initial phase of the mass movement was characterized by a rotational slide, evidenced by a semicircular curved and concave upward rupture surface. This phase exposed a vertical scarp reaching heights of up to 20 meters, composed of alternating layers of residual ash soils and pyroclastic flows from the Galeón Formation. Subsequently, a portion of the body adjacent to the crown tilted backward due to the concavity of the failure surface, resulting in ground subsidence. When the central region of the landslide became fully saturated with water, copious flows of earth and rock emanated from both sides of the landslide, as well as from its center.
 
-
-
 ## Geology of the landslide site
 
 In the microbasin of Chontaduro creek, a geological sequence unfolds, comprising both epiclastic and volcanic rocks attributed to the Galeón Formation (TQpg). Notably, these formations are prominently exposed in areas such as Cerro Broncazo and its environs, encompassing the Quilcacé and Esmita rivers. In these regions, the volcaniclastic deposits can attain substantial thicknesses, reaching up to 800 meters.
@@ -77,13 +74,13 @@ This geological sequence stands out due to its distinctive characteristics, feat
 
 ## Rainfall
 
-The precipitation data for the study area was obtained from the Párraga weather station (Station Code: 52010050), which is managed by Ideam (Instituto de Hidrología, Meteorología y Estudios Ambientales de Colombia). The time series analyzed encompasses 33 years of recorded data, spanning from 1990 to 2023 (Figure ~\ref{fig:annrain}). The study region experiences two distinct rainy seasons: the first occurs from January to May, characterized by relatively lower rainfall compared to the second rainy season, which typically occurs between October and December.
+The precipitation data for the study area was obtained from the Párraga weather station (Station Code: 52010050), which is managed by Ideam (Instituto de Hidrología, Meteorología y Estudios Ambientales de Colombia). The time series analyzed encompasses 33 years of recorded data, spanning from 1990 to 2023 (Figure \~\ref{fig:annrain}). The study region experiences two distinct rainy seasons: the first occurs from January to May, characterized by relatively lower rainfall compared to the second rainy season, which typically occurs between October and December.
 
 ::: {layout-ncol="1"}
 ![Total annual rainfall at the Parraga meteorological station.](annualRainfall.png){fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
 :::
 
-The daily time series recorded at the Párraga station exhibits a range of maximum daily precipitation values, varying between 0 mm and 95 mm. The highest recorded value, 94.8 mm, was documented on January 9th, which coincided with the onset of the landslide event (Figure ~\ref{fig:dayrain}). The cumulative rainfall data is meticulously computed over the 30-day period leading up to the triggering of the landslide, revealing an impressive total rainfall accumulation of 539.8 millimeters recorded up to January 9, 2023 (Figure ~\ref{fig:accdayr}).
+The daily time series recorded at the Párraga station exhibits a range of maximum daily precipitation values, varying between 0 mm and 95 mm. The highest recorded value, 94.8 mm, was documented on January 9th, which coincided with the onset of the landslide event (Figure \~\ref{fig:dayrain}). The cumulative rainfall data is meticulously computed over the 30-day period leading up to the triggering of the landslide, revealing an impressive total rainfall accumulation of 539.8 millimeters recorded up to January 9, 2023 (Figure \~\ref{fig:accdayr}).
 
 ::: {layout-ncol="1"}
 ![Total daily rainfall at the Parraga meteorological station.](DailyRainfall.png){fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
@@ -93,29 +90,25 @@ The daily time series recorded at the Párraga station exhibits a range of maxim
 ![Total daily rainfall at the Parraga meteorological station.](AccDailyRainfall.png){fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
 :::
 
-
-
 # Methods
 
-Aerial digital photographs of the landslide were captured on multiple occasions between January 9th and March 18th (see Table~\ref{Tab:invent}). Predominantly, these flights were conducted at an altitude of 250 meters. Over the span of 17 days, a total of 22 flights were executed by three organizations specializing in risk management and emergency disaster response: Unidad Nacional para la Gestión del Riesgo (UNGRD), Servicio Geológico Colombiano (SGC), and Policía Nacional (PNAL). Despite the involvement of various institutions, uniformity was maintained in the equipment used, ensuring consistent resolution in the photographs. However, aspects such as flight altitude, coverage area, flight plan design, and the number of captured images exhibited significant variation.
+Aerial digital photographs of the landslide were captured on multiple occasions between January 9th and March 18th (see Table\~\ref{Tab:invent}). Predominantly, these flights were conducted at an altitude of 250 meters. Over the span of 17 days, a total of 22 flights were executed by three organizations specializing in risk management and emergency disaster response: Unidad Nacional para la Gestión del Riesgo (UNGRD), Servicio Geológico Colombiano (SGC), and Policía Nacional (PNAL). Despite the involvement of various institutions, uniformity was maintained in the equipment used, ensuring consistent resolution in the photographs. However, aspects such as flight altitude, coverage area, flight plan design, and the number of captured images exhibited significant variation.
 
 A further challenge encountered in the data acquisition process was the georeferencing of the flights. During the initial flights, markers were not employed, leading to difficulties in precise location mapping. To address this, on May 18th, a set of markers was installed to ensure at least one flight could be accurately georeferenced. However, these newly placed markers proved too small to be discernible in images taken from higher altitudes. Consequently, to enhance the overall georeferencing accuracy of all flights, an independent survey was executed as part of this study, utilizing natural points as reference markers in the final survey.
 
 ## Point Cloud Generation
 
-The Structure from Motion (SfM) method uses algorithms to identify matching features in a series of overlapping digital images and calculates camera location and orientation from the differential positions of multiple matched features. From these calculations, overlapping imagery is then used to reconstruct a “sparse” or “coarse” 3D point cloud model of the photographed object or surface or scene. \cite{brook2019monitoring}. The software Agisoft Metashape \cite{Metashape2023} was used to undertake the SfM processing. In Metashape, the SFM processing comprises three key steps \cite{MetashapeManual2023}: 
+The Structure from Motion (SfM) method uses algorithms to identify matching features in a series of overlapping digital images and calculates camera location and orientation from the differential positions of multiple matched features. From these calculations, overlapping imagery is then used to reconstruct a “sparse” or “coarse” 3D point cloud model of the photographed object or surface or scene. \cite{brook2019monitoring}. The software Agisoft Metashape \cite{Metashape2023} was used to undertake the SfM processing. In Metashape, the SFM processing comprises three key steps \cite{MetashapeManual2023}:
 
-
-1. *Alignment*: Involves aerial triangulation and bundle block adjustment, where the software identifies feature points on images, matches them into tie points and determine camera positions, resulting in a tie point cloud and camera positions for depth map determination and 3D reconstruction.
-2. *Surface Generation*: Creates a 3D mesh or 2.5D digital elevation model (DEM), combining photogrammetric depth maps and LiDAR data, which can be textured and exported for various applications.
-3. *Orthomosaic Creation*: Generates a georeferenced orthomosaic by projecting images onto a chosen surface (DEM or mesh), useful for mapping and analysis, including vegetation indices in multispectral imagery projects.
-
+1.  *Alignment*: Involves aerial triangulation and bundle block adjustment, where the software identifies feature points on images, matches them into tie points and determine camera positions, resulting in a tie point cloud and camera positions for depth map determination and 3D reconstruction.
+2.  *Surface Generation*: Creates a 3D mesh or 2.5D digital elevation model (DEM), combining photogrammetric depth maps and LiDAR data, which can be textured and exported for various applications.
+3.  *Orthomosaic Creation*: Generates a georeferenced orthomosaic by projecting images onto a chosen surface (DEM or mesh), useful for mapping and analysis, including vegetation indices in multispectral imagery projects.
 
 In this study we adopted the workflow implemented in Agisoft Metashape, described in the User Manual v2.0 \cite{MetashapeManual2023}. The parameters used are described n the following sections.
 
 ## Image loading and chunks definition
 
-Sixteen distinct chunks were produced by importing photographs from selected flights (refer to Table ~\ref{Tab:chunks}), of which five met key selection criteria: a sufficient quantity of photographs, high image quality characterized by proper exposure and sharpness, and extensive coverage of the landslide area. This careful selection was necessary as some flights were tasked with monitoring more restricted sectors of the mass movement, targeting specific areas such as the crown or the Pan-American Highway. For comprehensive area coverage and improved model resolution during that timeframe, photographs from January 18th and 19th were merged in one single chunk.
+Sixteen distinct chunks were produced by importing photographs from selected flights (refer to Table \~\ref{Tab:chunks}), of which five met key selection criteria: a sufficient quantity of photographs, high image quality characterized by proper exposure and sharpness, and extensive coverage of the landslide area. This careful selection was necessary as some flights were tasked with monitoring more restricted sectors of the mass movement, targeting specific areas such as the crown or the Pan-American Highway. For comprehensive area coverage and improved model resolution during that timeframe, photographs from January 18th and 19th were merged in one single chunk.
 
 | Chunks       | Cameras | Points    | Markers    | Processed |
 |--------------|---------|-----------|------------|-----------|
@@ -138,7 +131,7 @@ Sixteen distinct chunks were produced by importing photographs from selected fli
 
 ## Photos alignment and filtering
 
-In each chunk, the photographs underwent an alignment process with the accuracy setting set to high, utilizing equipment source coordinates as a reference point. Camera optimization was conducted, selecting the estimation of the covariance of tie points. Subsequently, apparent outliers were removed from the sparse cloud manually to diminish potential reconstruction inaccuracies. Additional refinement was carried out by filtering based on tie point covariance and uncertainties, employing Metashape's integrated Python scripting capabilities for a more precise adjustment (Figure ~\ref{Fig:covar}).
+In each chunk, the photographs underwent an alignment process with the accuracy setting set to high, utilizing equipment source coordinates as a reference point. Camera optimization was conducted, selecting the estimation of the covariance of tie points. Subsequently, apparent outliers were removed from the sparse cloud manually to diminish potential reconstruction inaccuracies. Additional refinement was carried out by filtering based on tie point covariance and uncertainties, employing Metashape's integrated Python scripting capabilities for a more precise adjustment (Figure \~\ref{Fig:covar}).
 
 ::: {layout-ncol="1"}
 ![Tie point covariances obtained after filterin](covariance.png){fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
@@ -146,7 +139,7 @@ In each chunk, the photographs underwent an alignment process with the accuracy 
 
 ## Dense Point Cloud generation
 
-For all chosen chunks, a dense 3D point cloud was constructed employing high-quality settings and mild depth filtering. This detailed point cloud serves as the foundation for generating Digital Surface Models (DSM) and orthomosaics. Additional settings were selected to reuse depth maps, calculate point colors and calculate point confidence (Figure ~\ref{fig:dense}).
+For all chosen chunks, a dense 3D point cloud was constructed employing high-quality settings and mild depth filtering. This detailed point cloud serves as the foundation for generating Digital Surface Models (DSM) and orthomosaics. Additional settings were selected to reuse depth maps, calculate point colors and calculate point confidence (Figure \~\ref{fig:dense}).
 
 ::: {layout-ncol="1"}
 ![Dense point cloud for 14/01/2023](denseall.png){fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
@@ -154,7 +147,7 @@ For all chosen chunks, a dense 3D point cloud was constructed employing high-qua
 
 ## Natural points definition and GNSS survey
 
-To accurately reference the point clouds, a series of natural markers were established to guarantee high-precision (centimeter-level) localization that was readily identifiable in the field. Utilized reference points included distinct features such as sewer edges, fence corners, and light posts (see Figure ~\ref{fig:marker12}). Out of the 27 natural markers delineated (see Figure ~\ref{fig:marker}), only 21 were successfully surveyed on-site. The survey faced several challenges, including the demolition of referenced structures, obscuring of markers by debris or soil, and inaccessible locations of certain points. The coordinates for each marker were recorded using a Trimble SPS855 GNSS Modular Receiver.
+To accurately reference the point clouds, a series of natural markers were established to guarantee high-precision (centimeter-level) localization that was readily identifiable in the field. Utilized reference points included distinct features such as sewer edges, fence corners, and light posts (see Figure \~\ref{fig:marker12}). Out of the 27 natural markers delineated (see Figure \~\ref{fig:marker}), only 21 were successfully surveyed on-site. The survey faced several challenges, including the demolition of referenced structures, obscuring of markers by debris or soil, and inaccessible locations of certain points. The coordinates for each marker were recorded using a Trimble SPS855 GNSS Modular Receiver.
 
 ::: {layout-ncol="1"}
 ![Example of a marker defined](marker12.png){fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
@@ -164,12 +157,11 @@ To accurately reference the point clouds, a series of natural markers were estab
 ![Markers defined](markers.png){fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
 :::
 
-Following the download of raw data from the Trimble receiver, the post-processing software GrafNav was employed. GrafNav is an advanced GNSS post-processing suite that supports kinematic and static analysis with an advanced processing engine for GPS, GLONASS, and BeiDou signals. To refine the data, corrections were applied using the Popayan station (POPA), which is the station nearest to the collection site. The required data were acquired from the Colombian open data portal (https://www.colombiaenmapas.gov.co/). Both the RINEX files from the field-surveyed markers and the permanent station were inputted into GrafNav to execute the correction process. The precision-adjusted positions of the markers are shown in Table ~\ref{Tab:gnss}.
+Following the download of raw data from the Trimble receiver, the post-processing software GrafNav was employed. GrafNav is an advanced GNSS post-processing suite that supports kinematic and static analysis with an advanced processing engine for GPS, GLONASS, and BeiDou signals. To refine the data, corrections were applied using the Popayan station (POPA), which is the station nearest to the collection site. The required data were acquired from the Colombian open data portal (https://www.colombiaenmapas.gov.co/). Both the RINEX files from the field-surveyed markers and the permanent station were inputted into GrafNav to execute the correction process. The precision-adjusted positions of the markers are shown in Table \~\ref{Tab:gnss}.
 
 ## Chunk alignment
 
 For a precise alignment of point clouds, the process begins with the correction of a designated reference point cloud; in this case, the cloud dated 01/14/2023 is used. The coordinates of the markers are revised using the data acquired from the recent field campaign. Following this update, camera parameters are re-optimized, and a new dense point cloud is generated. This newly referenced point cloud then serves as the reference for aligning subsequent point clouds through the point-based method, a technique available to align chunks within Agisoft.
-
 
 ## ICP registration
 
@@ -195,9 +187,6 @@ Pulli (1999) emphasize the advantages of the point-to-plane method compared to t
 -   The point-to-plane method converges an order of magnitude faster than the point-to-point method.
 -   The point-to-point method typically requires at least ten times more point matching and alignment iterations than the point-to-plane method.
 -   The point-to-plane method is not significantly slowed down by false point pairs since each point can slide along the tangent plane of its corresponding point.
-
-
-
 
 # References
 
