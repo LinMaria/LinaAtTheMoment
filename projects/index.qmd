@@ -2,10 +2,12 @@
 page-layout: full
 title-block-banner: 19-02-PC.png
 title: '[Structure from Motion Application for Landslide Characterization and Monitoring]{style="color:black;"}'
-subtitle: 'The Rosas Landslide Case Study, Cauca Colombia Landslides are destructive events that can have severe impacts on human communities. In the context of ongoing global changes, these outcomes, like other natural hazards, have the potential to worsen.'
+subtitle: 'The Rosas Landslide Case Study, Cauca Colombia'
 author: "Lina Pérez"
 author_profile: true
 date: 2024-03-01
+toc: true
+toc_sticky: true
 
 read_time: false
 tags:
