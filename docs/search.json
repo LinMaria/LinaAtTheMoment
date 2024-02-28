@@ -1,0 +1,107 @@
+[
+  {
+    "objectID": "quarto-website-template-main/cv/index.html",
+    "href": "quarto-website-template-main/cv/index.html",
+    "title": "Curriculum vitae",
+    "section": "",
+    "text": "Download current CV\n  \n\n\n  \n\n\nView the tutorial for this template (+ download link)"
+  },
+  {
+    "objectID": "projects/index.html",
+    "href": "projects/index.html",
+    "title": "Structure from Motion Application for Landslide Characterization and Monitoring",
+    "section": "",
+    "text": "Landslides are destructive events that can have severe impacts on human communities. In the context of ongoing global changes, these outcomes, like other natural hazards, have the potential to worsen. The consequences of landslides can lead to various forms of damage and, in the worst-case scenario, result in casualties. Furthermore, larger landslides inherently carry a higher probability of causing these detrimental effects. Various techniques are currently employed to rapidly and cost-effectively assess large landslides."
+  },
+  {
+    "objectID": "projects/index.html#geological-setting",
+    "href": "projects/index.html#geological-setting",
+    "title": "Structure from Motion Application for Landslide Characterization and Monitoring",
+    "section": "Geological setting",
+    "text": "Geological setting\nThe geological setting of the study area is profoundly influenced by its location within the Northern Andes, where the convergence of three tectonic plates—the Nazca, Caribbean, and South American plates—gives rise to active N-NE faulting within the Andean block. This convergence, with the Nazca plate moving eastward relative to northwestern South America at a rate of 6 cm/yr, leads to the formation of the Colombia-Trench to the west and the mountain range of the Colombian Andes . Within the Colombian Andes, three distinct mountain ranges—the Western, Central, and Eastern Cordillera—converge southward into a unified range, shaped by deformation and faulting resulting from the interaction of these tectonic plates .\\ The study area, encompassing the upper Patía River basin, is situated at the southern Colombian Andes’ convergence point between the Western and Central Cordilleras. Here, the Western Cordillera rises dramatically from the Pacific Coastal Plain on its western flank, while to the east, it is separated from the Central Cordillera by the Cauca-Patia valleys spanning a distance of approximately 500 km . The Cauca-Patia valley, resembling a graben-like structure, is characterized by an asymmetric tilt and is filled with Tertiary-Quaternary continental clastics and volcanics. Bounded by the Cauca fault zone to the west and the Romeral fault zone to the east, this depression effectively separates the oceanic Western Cordillera from the ancient crystalline Central Cordillera (Figure ~\\(\\ref{fig:geomap}\\)).\n\n\n\n\n\n\nGeological map of the study area. Sourced from sgc2020"
+  },
+  {
+    "objectID": "projects/index.html#geology-of-the-landslide-site",
+    "href": "projects/index.html#geology-of-the-landslide-site",
+    "title": "Structure from Motion Application for Landslide Characterization and Monitoring",
+    "section": "Geology of the landslide site",
+    "text": "Geology of the landslide site\nIn the microbasin of Chontaduro creek, a geological sequence unfolds, comprising both epiclastic and volcanic rocks attributed to the Galeón Formation (TQpg). Notably, these formations are prominently exposed in areas such as Cerro Broncazo and its environs, encompassing the Quilcacé and Esmita rivers. In these regions, the volcaniclastic deposits can attain substantial thicknesses, reaching up to 800 meters.\nThis geological sequence stands out due to its distinctive characteristics, featuring abrupt scarps and gently sloping layers. These geological features are attributed by researchers to recent tectonic movements associated with the Mosquerillo-La Tetilla fault, a component of the Romeral Fault System."
+  },
+  {
+    "objectID": "projects/index.html#rainfall",
+    "href": "projects/index.html#rainfall",
+    "title": "Structure from Motion Application for Landslide Characterization and Monitoring",
+    "section": "Rainfall",
+    "text": "Rainfall\nThe precipitation data for the study area was obtained from the Párraga weather station (Station Code: 52010050), which is managed by Ideam (Instituto de Hidrología, Meteorología y Estudios Ambientales de Colombia). The time series analyzed encompasses 33 years of recorded data, spanning from 1990 to 2023 (Figure ~\\(\\ref{fig:annrain}\\)). The study region experiences two distinct rainy seasons: the first occurs from January to May, characterized by relatively lower rainfall compared to the second rainy season, which typically occurs between October and December.\n\n\n\n\n\n\nTotal annual rainfall at the Parraga meteorological station.\n\n\n\n\n\nThe daily time series recorded at the Párraga station exhibits a range of maximum daily precipitation values, varying between 0 mm and 95 mm. The highest recorded value, 94.8 mm, was documented on January 9th, which coincided with the onset of the landslide event (Figure ~\\(\\ref{fig:dayrain}\\)). The cumulative rainfall data is meticulously computed over the 30-day period leading up to the triggering of the landslide, revealing an impressive total rainfall accumulation of 539.8 millimeters recorded up to January 9, 2023 (Figure ~\\(\\ref{fig:accdayr}\\)).\n\n\n\n\n\n\nTotal daily rainfall at the Parraga meteorological station.\n\n\n\n\n\n\n\n\n\n\n\nTotal daily rainfall at the Parraga meteorological station."
+  },
+  {
+    "objectID": "projects/index.html#point-cloud-generation",
+    "href": "projects/index.html#point-cloud-generation",
+    "title": "Structure from Motion Application for Landslide Characterization and Monitoring",
+    "section": "Point Cloud Generation",
+    "text": "Point Cloud Generation\nThe Structure from Motion (SfM) method uses algorithms to identify matching features in a series of overlapping digital images and calculates camera location and orientation from the differential positions of multiple matched features. From these calculations, overlapping imagery is then used to reconstruct a “sparse” or “coarse” 3D point cloud model of the photographed object or surface or scene. . The software Agisoft Metashape was used to undertake the SfM processing. In Metashape, the SFM processing comprises three key steps :\n\nAlignment: Involves aerial triangulation and bundle block adjustment, where the software identifies feature points on images, matches them into tie points and determine camera positions, resulting in a tie point cloud and camera positions for depth map determination and 3D reconstruction.\nSurface Generation: Creates a 3D mesh or 2.5D digital elevation model (DEM), combining photogrammetric depth maps and LiDAR data, which can be textured and exported for various applications.\nOrthomosaic Creation: Generates a georeferenced orthomosaic by projecting images onto a chosen surface (DEM or mesh), useful for mapping and analysis, including vegetation indices in multispectral imagery projects.\n\nIn this study we adopted the workflow implemented in Agisoft Metashape, described in the User Manual v2.0 . The parameters used are described n the following sections."
+  },
+  {
+    "objectID": "projects/index.html#image-loading-and-chunks-definition",
+    "href": "projects/index.html#image-loading-and-chunks-definition",
+    "title": "Structure from Motion Application for Landslide Characterization and Monitoring",
+    "section": "Image loading and chunks definition",
+    "text": "Image loading and chunks definition\nSixteen distinct chunks were produced by importing photographs from selected flights (refer to Table ~\\(\\ref{Tab:chunks}\\)), of which five met key selection criteria: a sufficient quantity of photographs, high image quality characterized by proper exposure and sharpness, and extensive coverage of the landslide area. This careful selection was necessary as some flights were tasked with monitoring more restricted sectors of the mass movement, targeting specific areas such as the crown or the Pan-American Highway. For comprehensive area coverage and improved model resolution during that timeframe, photographs from January 18th and 19th were merged in one single chunk.\n\n\n\nChunks\nCameras\nPoints\nMarkers\nProcessed\n\n\n\n\n1/14/2023\n1491\n880,613\n19 markers\nX\n\n\n1/17/2023\n567\n436,618\n4 markers\n\n\n\n1/18-19/2023\n878\n1,666,175\n17 markers\nX\n\n\n1/19/2023\n369\n387,054\n\n\n\n\n1/20/2023\n196\n194,101\n\n\n\n\n1/26/2023\n332\n352,573\n\n\n\n\n1/30/2023\n321\n351,487\n\n\n\n\n2/3/2023\n418\n403.19\n\n\n\n\n2/6/2023\n331\n336,810\n\n\n\n\n2/11/2023\n576\n627,729\n\n\n\n\n2/16/2023\n329\n346,862\n\n\n\n\n2/19/2023\n442\n459,783\n\nX\n\n\n3/6/2023\n330\n324,661\n\nX\n\n\n3/21/2023\n331\n352.909\n\n\n\n\n3/30/2023\n328\n327,605\n\n\n\n\n5/18/2023\n333\n243,261\n\nX"
+  },
+  {
+    "objectID": "projects/index.html#photos-alignment-and-filtering",
+    "href": "projects/index.html#photos-alignment-and-filtering",
+    "title": "Structure from Motion Application for Landslide Characterization and Monitoring",
+    "section": "Photos alignment and filtering",
+    "text": "Photos alignment and filtering\nIn each chunk, the photographs underwent an alignment process with the accuracy setting set to high, utilizing equipment source coordinates as a reference point. Camera optimization was conducted, selecting the estimation of the covariance of tie points. Subsequently, apparent outliers were removed from the sparse cloud manually to diminish potential reconstruction inaccuracies. Additional refinement was carried out by filtering based on tie point covariance and uncertainties, employing Metashape’s integrated Python scripting capabilities for a more precise adjustment (Figure ~\\(\\ref{Fig:covar}\\)).\n\n\n\n\n\n\nTie point covariances obtained after filterin"
+  },
+  {
+    "objectID": "projects/index.html#dense-point-cloud-generation",
+    "href": "projects/index.html#dense-point-cloud-generation",
+    "title": "Structure from Motion Application for Landslide Characterization and Monitoring",
+    "section": "Dense Point Cloud generation",
+    "text": "Dense Point Cloud generation\nFor all chosen chunks, a dense 3D point cloud was constructed employing high-quality settings and mild depth filtering. This detailed point cloud serves as the foundation for generating Digital Surface Models (DSM) and orthomosaics. Additional settings were selected to reuse depth maps, calculate point colors and calculate point confidence (Figure ~\\(\\ref{fig:dense}\\)).\n\n\n\n\n\n\nDense point cloud for 14/01/2023"
+  },
+  {
+    "objectID": "projects/index.html#natural-points-definition-and-gnss-survey",
+    "href": "projects/index.html#natural-points-definition-and-gnss-survey",
+    "title": "Structure from Motion Application for Landslide Characterization and Monitoring",
+    "section": "Natural points definition and GNSS survey",
+    "text": "Natural points definition and GNSS survey\nTo accurately reference the point clouds, a series of natural markers were established to guarantee high-precision (centimeter-level) localization that was readily identifiable in the field. Utilized reference points included distinct features such as sewer edges, fence corners, and light posts (see Figure ~\\(\\ref{fig:marker12}\\)). Out of the 27 natural markers delineated (see Figure ~\\(\\ref{fig:marker}\\)), only 21 were successfully surveyed on-site. The survey faced several challenges, including the demolition of referenced structures, obscuring of markers by debris or soil, and inaccessible locations of certain points. The coordinates for each marker were recorded using a Trimble SPS855 GNSS Modular Receiver.\n\n\n\n\n\n\nExample of a marker defined\n\n\n\n\n\n\n\n\n\n\n\nMarkers defined\n\n\n\n\n\nFollowing the download of raw data from the Trimble receiver, the post-processing software GrafNav was employed. GrafNav is an advanced GNSS post-processing suite that supports kinematic and static analysis with an advanced processing engine for GPS, GLONASS, and BeiDou signals. To refine the data, corrections were applied using the Popayan station (POPA), which is the station nearest to the collection site. The required data were acquired from the Colombian open data portal (https://www.colombiaenmapas.gov.co/). Both the RINEX files from the field-surveyed markers and the permanent station were inputted into GrafNav to execute the correction process. The precision-adjusted positions of the markers are shown in Table ~\\(\\ref{Tab:gnss}\\)."
+  },
+  {
+    "objectID": "projects/index.html#chunk-alignment",
+    "href": "projects/index.html#chunk-alignment",
+    "title": "Structure from Motion Application for Landslide Characterization and Monitoring",
+    "section": "Chunk alignment",
+    "text": "Chunk alignment\nFor a precise alignment of point clouds, the process begins with the correction of a designated reference point cloud; in this case, the cloud dated 01/14/2023 is used. The coordinates of the markers are revised using the data acquired from the recent field campaign. Following this update, camera parameters are re-optimized, and a new dense point cloud is generated. This newly referenced point cloud then serves as the reference for aligning subsequent point clouds through the point-based method, a technique available to align chunks within Agisoft."
+  },
+  {
+    "objectID": "projects/index.html#icp-registration",
+    "href": "projects/index.html#icp-registration",
+    "title": "Structure from Motion Application for Landslide Characterization and Monitoring",
+    "section": "ICP registration",
+    "text": "ICP registration\nUnlike global alignment, fine registration methods require two point clouds that already have a rough correspondence. The Iterative Closest Point (ICP) algorithm is commonly used for local refinement and has two main variants:\nPoint-to-point ICP\nThe Iterative Closest Point (ICP) registration method using the point-to-point variant was introduced by Besl and McKay (1992). This iterative algorithm consists of two stages in each iteration:\n\nFirst, for each point in the source point cloud, it searches for the closest point in the target point cloud.\nSecond, it attempts to find a transformation that minimizes the distance between the corresponding points.\n\nThese two processing stages are repeated until convergence (Salvi et al., 2007).\nPoint-to-plane ICP\nThe point-to-plane variant of the ICP algorithm takes into account that scanned objects are not individual points, but surfaces. Unlike point-to-point, which tries to minimize the distance between individual points, the point-to-plane method assumes that points in the source point cloud are generally on a surface of the target point cloud. This accounts for the fact that the source and target point clouds are not necessarily identical.\nThe general processing procedure of the point-to-plane method is similar to that of the point-to-point approach. However, instead of searching for the closest points between the source and target point clouds, the method calculates the intersection of the point normal in the source point cloud with the tangent plane at its corresponding point in the target point cloud. Then, the algorithm attempts to find a transformation that minimizes the distance between points and the tangent planes at its correspondence points (Low, 2004). This process is repeated until convergence.\nPulli (1999) emphasize the advantages of the point-to-plane method compared to the point-to-point method. Some of the arguments and findings are:\n\nThe point-to-plane method converges an order of magnitude faster than the point-to-point method.\nThe point-to-point method typically requires at least ten times more point matching and alignment iterations than the point-to-plane method.\nThe point-to-plane method is not significantly slowed down by false point pairs since each point can slide along the tangent plane of its corresponding point."
+  },
+  {
+    "objectID": "cv/index.html",
+    "href": "cv/index.html",
+    "title": "Curriculum vitae",
+    "section": "",
+    "text": "Download current CV\n  \n\n\n  \n\n\nView the tutorial for this template (+ download link)"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome to my website!",
+    "section": "",
+    "text": "Twitter\n  \n  \n    \n     Github\n  \n  \n    \n     LinkedIn\n  \n  \n    \n     Email\n  \n\n  \n  \n\nWelcome to my website!\n\n\n\n\nPlease feel free to contact me if you have any questions or would like to discuss potential projects.\n\nTake a look at my current projects"
+  },
+  {
+    "objectID": "quarto-website-template-main/404.html",
+    "href": "quarto-website-template-main/404.html",
+    "title": "404",
+    "section": "",
+    "text": "Page not found, sorry! Try the search or navigate back to the base website."
+  }
+]
