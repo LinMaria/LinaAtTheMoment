@@ -2,7 +2,7 @@
 page-layout: full
 title-block-banner: 19-02-PC.png
 title: '[Structure from Motion Application for Landslide Characterization and Monitoring]{style="color:black;"}'
-subtitle: 'The Rosas Landslide Case Study, Cauca Colombia'
+subtitle: 'The 2023 Rosas Landslide Case Study, Cauca Colombia'
 author: "Lina Pérez"
 author_profile: true
 date: 2024-03-01
