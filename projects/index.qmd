@@ -1,13 +1,11 @@
 ---
 page-layout: full
-title: 'Structure from Motion Application for Landslide Characterization and Monitoring: The Rosas Landslide case study,Cauca Colombia'
-image: densedetail.png
+title-block-banner: 19-02-PC.png
+title: '[Structure from Motion Application for Landslide Characterization and Monitoring]{style="color:black;"}'
+subtitle: 'The Rosas Landslide Case Study, Cauca Colombia Landslides are destructive events that can have severe impacts on human communities. In the context of ongoing global changes, these outcomes, like other natural hazards, have the potential to worsen.'
 author: "Lina Pérez"
 author_profile: true
 date: 2024-03-01
-toc: true
-toc_sticky: true
-toc_label: "Point cloud representation of the Golm campus at the University of Potsdam"
 
 read_time: false
 tags:
@@ -17,6 +15,7 @@ tags:
   - point cloud registration
   - ICP
 ---
+
 
 Landslides are destructive events that can have severe impacts on human communities. In the context of ongoing global changes, these outcomes, like other natural hazards, have the potential to worsen. The consequences of landslides can lead to various forms of damage and, in the worst-case scenario, result in casualties. Furthermore, larger landslides inherently carry a higher probability of causing these detrimental effects. Various techniques are currently employed to rapidly and cost-effectively assess large landslides.
 

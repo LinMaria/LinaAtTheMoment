@@ -9,7 +9,7 @@
 <meta name="author" content="Lina Pérez">
 <meta name="dcterms.date" content="2024-03-01">
 
-<title>Lina Maria Pérez - Structure from Motion Application for Landslide Characterization and Monitoring: The Rosas Landslide case study,Cauca Colombia</title>
+<title>Lina Maria Pérez - Structure from Motion Application for Landslide Characterization and Monitoring</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -61,6 +61,13 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<style>
+
+      .quarto-title-block .quarto-title-banner {
+        background-image: url(19-02-PC.png);
+background-size: cover;
+      }
+</style>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -75,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../img/logo.png" alt="" class="navbar-logo">
+    <img src="../img/logo.JPG" alt="" class="navbar-logo">
     </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Lina Maria Pérez</span>
@@ -98,17 +105,17 @@ ul.task-list li input[type="checkbox"] {
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/MarvinSchmittML" rel="" target=""><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/Mariali_P" rel="" target=""><i class="bi bi-twitter" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://www.linkedin.com/in/marvin-schmitt-a85b321a2/" rel="" target=""><i class="bi bi-linkedin" role="img">
+    <a class="nav-link" href="https://www.linkedin.com/in/linmapeerzg621/" rel="" target=""><i class="bi bi-linkedin" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="mailto:mail.marvinschmitt@gmail.com" rel="" target=""><i class="bi bi-envelope" role="img" aria-label="email">
+    <a class="nav-link" href="mailto:linamapg@gmail.com" rel="" target=""><i class="bi bi-envelope" role="img" aria-label="email">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
@@ -120,69 +127,45 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-page-left">
+      <h1 class="title"><span style="color:black;">Structure from Motion Application for Landslide Characterization and Monitoring</span></h1>
+            <p class="subtitle lead">The Rosas Landslide Case Study, Cauca Colombia Landslides are destructive events that can have severe impacts on human communities. In the context of ongoing global changes, these outcomes, like other natural hazards, have the potential to worsen.</p>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Lina Pérez </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">March 1, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#study-area" id="toc-study-area" class="nav-link" data-scroll-target="#study-area">Study area</a>
-  <ul class="collapse">
-  <li><a href="#geological-setting" id="toc-geological-setting" class="nav-link" data-scroll-target="#geological-setting">Geological setting</a></li>
-  </ul></li>
-  <li><a href="#landslide-event-characterization" id="toc-landslide-event-characterization" class="nav-link" data-scroll-target="#landslide-event-characterization">Landslide event characterization</a>
-  <ul class="collapse">
-  <li><a href="#geology-of-the-landslide-site" id="toc-geology-of-the-landslide-site" class="nav-link" data-scroll-target="#geology-of-the-landslide-site">Geology of the landslide site</a></li>
-  <li><a href="#rainfall" id="toc-rainfall" class="nav-link" data-scroll-target="#rainfall">Rainfall</a></li>
-  </ul></li>
-  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods</a>
-  <ul class="collapse">
-  <li><a href="#point-cloud-generation" id="toc-point-cloud-generation" class="nav-link" data-scroll-target="#point-cloud-generation">Point Cloud Generation</a></li>
-  <li><a href="#image-loading-and-chunks-definition" id="toc-image-loading-and-chunks-definition" class="nav-link" data-scroll-target="#image-loading-and-chunks-definition">Image loading and chunks definition</a></li>
-  <li><a href="#photos-alignment-and-filtering" id="toc-photos-alignment-and-filtering" class="nav-link" data-scroll-target="#photos-alignment-and-filtering">Photos alignment and filtering</a></li>
-  <li><a href="#dense-point-cloud-generation" id="toc-dense-point-cloud-generation" class="nav-link" data-scroll-target="#dense-point-cloud-generation">Dense Point Cloud generation</a></li>
-  <li><a href="#natural-points-definition-and-gnss-survey" id="toc-natural-points-definition-and-gnss-survey" class="nav-link" data-scroll-target="#natural-points-definition-and-gnss-survey">Natural points definition and GNSS survey</a></li>
-  <li><a href="#chunk-alignment" id="toc-chunk-alignment" class="nav-link" data-scroll-target="#chunk-alignment">Chunk alignment</a></li>
-  <li><a href="#icp-registration" id="toc-icp-registration" class="nav-link" data-scroll-target="#icp-registration">ICP registration</a></li>
-  </ul></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
-  </ul>
-</nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full column-page-left" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Structure from Motion Application for Landslide Characterization and Monitoring: The Rosas Landslide case study,Cauca Colombia</h1>
-</div>
+<main class="content quarto-banner-title-block page-columns page-full column-page-left" id="quarto-document-content">
 
 
 
-<div class="quarto-title-meta">
-
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Lina Pérez </p>
-          </div>
-  </div>
-    
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">March 1, 2024</p>
-    </div>
-  </div>
-  
-    
-  </div>
-  
-
-</header>
 
 <p>Landslides are destructive events that can have severe impacts on human communities. In the context of ongoing global changes, these outcomes, like other natural hazards, have the potential to worsen. The consequences of landslides can lead to various forms of damage and, in the worst-case scenario, result in casualties. Furthermore, larger landslides inherently carry a higher probability of causing these detrimental effects. Various techniques are currently employed to rapidly and cost-effectively assess large landslides.</p>
 <section id="introduction" class="level1">

@@ -10,7 +10,7 @@ website:
   # start of the navigation bar at the top of the website
   navbar:
     pinned: true
-    logo: /img/logo.png
+    logo: /img/logo.JPG
     
     # your sub-pages
     left:
@@ -22,12 +22,12 @@ website:
     # your social media handles
     right:
       - icon: twitter
-        href: https://twitter.com/MarvinSchmittML
+        href: https://twitter.com/Mariali_P
       - icon: linkedin
-        href: https://www.linkedin.com/in/marvin-schmitt-a85b321a2/
+        href: https://www.linkedin.com/in/linmapeerzg621/
       - icon: envelope
         aria-label: email
-        href: "mailto:mail.marvinschmitt@gmail.com"  
+        href: "mailto:linamapg@gmail.com"  
   
   
 
