@@ -8,7 +8,8 @@ author_profile: true
 date: 2024-03-01
 toc: true
 toc_sticky: true
-
+bibliography: references.bib
+csl: begell-house-apa.csl
 read_time: false
 tags:
   - TLS
@@ -18,14 +19,13 @@ tags:
   - ICP
 ---
 
-
 Landslides are destructive events that can have severe impacts on human communities. In the context of ongoing global changes, these outcomes, like other natural hazards, have the potential to worsen. The consequences of landslides can lead to various forms of damage and, in the worst-case scenario, result in casualties. Furthermore, larger landslides inherently carry a higher probability of causing these detrimental effects. Various techniques are currently employed to rapidly and cost-effectively assess large landslides.
 
 # Introduction
 
-On January 9th, 2023, a catastrophic landslide severely impacted the upper basin of Chontaduro Creek, located in the municipality of Rosas-Cauca in southwestern Colombia. This event caused extensive damage to the communities of La Soledad, Santa Clara, Párraga Viejo, and Chontaduro, resulting in the destruction of at least 150 homes and a significant portion of the Pan-American highway, which connects southern Colombia to the rest of the country. Inhabitants of the region reported their initial observations of instability on January 4th when they noticed small cracks with lengths ranging from 20 cm to 30 cm forming in the crown area near the Alfonso Córdoba school. However, it was not until the period between the afternoon of January 9th and the morning of January 10th that the landslide's progression became starkly evident, leaving distinct markings on both the crown and flanks of the movement. Following this significant event, the landslide exhibited continuous and substantial activity until January 18th. By January 10th, the area affected by the mass movement had expanded to 64.72 hectares, and it further increased to 87.16 hectares by January 13th, ultimately reaching 89.12 hectares by January 18th.\\
+On January 9th, 2023, a catastrophic landslide severely impacted the upper basin of Chontaduro Creek, located in the municipality of Rosas-Cauca in southwestern Colombia. This event caused extensive damage to the communities of La Soledad, Santa Clara, Párraga Viejo, and Chontaduro, resulting in the destruction of at least 150 homes and a significant portion of the Pan-American highway, which connects southern Colombia to the rest of the country. Inhabitants of the region reported their initial observations of instability on January 4th when they noticed small cracks with lengths ranging from 20 cm to 30 cm forming in the crown area near the Alfonso Córdoba school. However, it was not until the period between the afternoon of January 9th and the morning of January 10th that the landslide's progression became starkly evident, leaving distinct markings on both the crown and flanks of the movement. Following this significant event, the landslide exhibited continuous and substantial activity until January 18th. By January 10th, the area affected by the mass movement had expanded to 64.72 hectares, and it further increased to 87.16 hectares by January 13th, ultimately reaching 89.12 hectares by January 18th.
 
-The Rosas landslide, situated in Colombia, has been closely monitored by several government institutions, including UNGRD, the Geological Survey, and the National Armed Forces. These agencies have conducted numerous UAV (Unmanned Aerial Vehicle) flights to monitor the ongoing evolution of the landslide. Over the past decade, there has been a notable increase in the utilization of remote sensing technology for landslide mapping and monitoring. This surge in usage has been complemented by significant improvements in the spatial resolution of remote sensing technologies, particularly with the introduction of laser scanning (both airborne and terrestrial) and unmanned aerial vehicles (UAVs) \cite{niethammer2012uav}. Earth observation methods are useful to produce detailed multi-temporal sets of images, orthophotos, and digital elevation models (DEMs). These products may provide insight into the flow kinematics such as flow rate, landslide expansion, and accumulation at the toe zone or retreating scarps. In addition, these new techniques allow volume calculations of the accumulated and removed material by the landslide and mapping of the topographic changes \cite{lucieer2014mapping}.\\
+The Rosas landslide, situated in Colombia, has been closely monitored by several government institutions, including UNGRD, the Geological Survey, and the National Armed Forces. These agencies have conducted numerous UAV (Unmanned Aerial Vehicle) flights to monitor the ongoing evolution of the landslide. Over the past decade, there has been a notable increase in the utilization of remote sensing technology for landslide mapping and monitoring. This surge in usage has been complemented by significant improvements in the spatial resolution of remote sensing technologies, particularly with the introduction of laser scanning (both airborne and terrestrial) and unmanned aerial vehicles (UAVs) (@niethammer2012uav). Earth observation methods are useful to produce detailed multi-temporal sets of images, orthophotos, and digital elevation models (DEMs). These products may provide insight into the flow kinematics such as flow rate, landslide expansion, and accumulation at the toe zone or retreating scarps. In addition, these new techniques allow volume calculations of the accumulated and removed material by the landslide and mapping of the topographic changes (@lucieer2014mapping).
 
 Furthermore, recent advances in photogrammetric image processing and computer vision have resulted in a technique known as Structure from Motion (SfM). Highly detailed 3D models can be obtained from overlapping multi-view photography with SfM algorithms. While spaceborne and airborne remote sensing techniques are commonly employed for landslide research, these methods may lack the flexibility offered by the novel remote sensing platform of UAVs. When combined with UAV technology, Structure from Motion (SfM) can provide a cost-effective and efficient means of acquiring dense and accurate 3D data of the Earth's surface. In the present work, we compile and process all the UAV data collected for the Rosas landslide to generate multi-temporal and multi-scale 3D models. This compilation aims to offer a detailed investigation into the temporal and spatial behavior of the landslide, with a focus on providing situational awareness in the aftermath of the emergency phase and generating valuable information for crisis management.
 
@@ -33,84 +33,81 @@ Furthermore, recent advances in photogrammetric image processing and computer vi
 
 # Study area
 
-The Rosas landslide occurred in the rural district of La Soledad, located within the municipality of Rosas-Cauca, situated in the southwestern region of Colombia. This region lies within the Patía Valley intercordilleran depression, nestled between the Western Cordillera and the Central Cordillera of Colombia. The primary drainage network affected is that of the Chontaduro creek, a tributary of the Esmita River, which is part of the upper Patía River basin (refer to Figure \~\ref{fig:SArea}). According to the Atlas of Colombia \cite{igacatlas}, the region experiences an average annual rainfall of 2,000 mm at the summit of the Central Cordillera and 3,000 mm at the summit of the Western Cordillera. Rainfall patterns indicate a distinct summer season during June, July, August, and September, followed by a rainy season during the remaining months.
+The Rosas landslide occurred in the rural district of La Soledad, located within the municipality of Rosas-Cauca, situated in the southwestern region of Colombia. This region lies within the Patía Valley intercordilleran depression, nestled between the Western Cordillera and the Central Cordillera of Colombia. The primary drainage network affected is that of the Chontaduro creek, a tributary of the Esmita River, which is part of the upper Patía River basin (refer to @fig-sarea). According to the Atlas of Colombia (@igacatlas), the region experiences an average annual rainfall of 2,000 mm at the summit of the Central Cordillera and 3,000 mm at the summit of the Western Cordillera. Rainfall patterns indicate a distinct summer season during June, July, August, and September, followed by a rainy season during the remaining months.
 
 ::: {layout-ncol="1"}
-![Shaded relief map of study area, showing main rivers and towns](RosasStudArea.jpg){fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
+![Shaded relief map of study area, showing main rivers and towns](RosasStudArea.jpg){#fig-sarea fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
 :::
 
-The study area is situated within the western range of the Colombian Andes, a region characterized by its susceptibility to landslides. This vulnerability arises from a combination of factors including steep terrain, adverse weather conditions, and the presence of soils derived from volcanic deposits originating from the Sotará volcanic complex.\\ A comprehensive study conducted by the Geological Survey of Colombia (SGC) \cite{sgc2020}, examined the development and distribution of landslide in the region. Their investigation identified a total of 273 landslide events occurring within the municipality of Rosas during the period spanning from 1990 to 2019. Of these occurrences, five were deemed severe, leading to tragic casualties, substantial economic losses, and considerable damage to critical infrastructure.\\
+The study area is situated within the western range of the Colombian Andes, a region characterized by its susceptibility to landslides. This vulnerability arises from a combination of factors including steep terrain, adverse weather conditions, and the presence of soils derived from volcanic deposits originating from the Sotará volcanic complex. A comprehensive study conducted by the Geological Survey of Colombia-SGC (@sgc2020), examined the development and distribution of landslide in the region. Their investigation identified a total of 273 landslide events occurring within the municipality of Rosas during the period spanning from 1990 to 2019. Of these occurrences, five were deemed severe, leading to tragic casualties, substantial economic losses, and considerable damage to critical infrastructure.
 
-As depicted in Figure \~\ref{fig:Inventory}, the area has a historical record of being affected by landslides of varying magnitudes. However, the Rosas landslide, which is the focal point of our study, stands out as the largest landslide identified in the surrounding region since 1990.\\
+As depicted in Figure @fig-inven, the area has a historical record of being affected by landslides of varying magnitudes. However, the Rosas landslide, which is the focal point of our study, stands out as the largest landslide identified in the surrounding region since 1990.
 
 ::: {layout-ncol="1"}
-![Multi-temporal landslide inventory in the study area, sourced from sgc2020](LandslideInventory.jpg){fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
+![Multi-temporal landslide inventory in the study area, sourced from @sgc2020](LandslideInventory.jpg){#fig-inven fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
 :::
 
 ## Geological setting
 
-The geological setting of the study area is profoundly influenced by its location within the Northern Andes, where the convergence of three tectonic plates—the Nazca, Caribbean, and South American plates—gives rise to active N-NE faulting within the Andean block. This convergence, with the Nazca plate moving eastward relative to northwestern South America at a rate of 6 cm/yr, leads to the formation of the Colombia-Trench to the west and the mountain range of the Colombian Andes \cite{pulido2003seismotectonics}. Within the Colombian Andes, three distinct mountain ranges—the Western, Central, and Eastern Cordillera—converge southward into a unified range, shaped by deformation and faulting resulting from the interaction of these tectonic plates \cite{taboada2000geodynamics}.\\ The study area, encompassing the upper Patía River basin, is situated at the southern Colombian Andes' convergence point between the Western and Central Cordilleras. Here, the Western Cordillera rises dramatically from the Pacific Coastal Plain on its western flank, while to the east, it is separated from the Central Cordillera by the Cauca-Patia valleys spanning a distance of approximately 500 km \cite{Huges1984}. The Cauca-Patia valley, resembling a graben-like structure, is characterized by an asymmetric tilt and is filled with Tertiary-Quaternary continental clastics and volcanics. Bounded by the Cauca fault zone to the west and the Romeral fault zone to the east, this depression effectively separates the oceanic Western Cordillera from the ancient crystalline Central Cordillera (Figure \~\ref{fig:geomap}).
+The geological setting of the study area is profoundly influenced by its location within the Northern Andes, where the convergence of three tectonic plates—the Nazca, Caribbean, and South American plates—gives rise to active N-NE faulting within the Andean block. This convergence, with the Nazca plate moving eastward relative to northwestern South America at a rate of 6 cm/yr, leads to the formation of the Colombia-Trench to the west and the mountain range of the Colombian Andes @pulido2003seismotectonics. Within the Colombian Andes, three distinct mountain ranges—the Western, Central, and Eastern Cordillera—converge southward into a unified range, shaped by deformation and faulting resulting from the interaction of these tectonic plates @taboada2000geodynamics. The study area, encompassing the upper Patía River basin, is situated at the southern Colombian Andes' convergence point between the Western and Central Cordilleras. Here, the Western Cordillera rises dramatically from the Pacific Coastal Plain on its western flank, while to the east, it is separated from the Central Cordillera by the Cauca-Patia valleys spanning a distance of approximately 500 km. The Cauca-Patia valley, resembling a graben-like structure, is characterized by an asymmetric tilt and is filled with Tertiary-Quaternary continental clastics and volcanics. Bounded by the Cauca fault zone to the west and the Romeral fault zone to the east, this depression effectively separates the oceanic Western Cordillera from the ancient crystalline Central Cordillera (@fig-geomap).
 
 ::: {layout-ncol="1"}
-![Geological map of the study area. Sourced from sgc2020](GELOGY.jpg){fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
+![Geological map of the study area. Sourced from @sgc2020](GELOGY.jpg){#fig-geomap fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
 :::
 
 # Landslide event characterization
 
-The Rosas mass movement, situated within the micro-basin of Chontaduro creek, is characterized as an active rotational landslide of a complex nature, exhibiting retrogressive and widening behavior. This landslide initiation point is positioned 900 meters from the summit of Broncazo Hill and 700 meters from its base (Figure \~\ref{fig:annrain}).
+The Rosas mass movement, situated within the micro-basin of Chontaduro creek, is characterized as an active rotational landslide of a complex nature, exhibiting retrogressive and widening behavior. This landslide initiation point is positioned 900 meters from the summit of Broncazo Hill and 700 meters from its base (@fig-annrain).
 
 ::: {layout-ncol="1"}
-![Panoramic view of Rosas landslide. Sourced from InformeVisitaEmergencia](landslide1.png){fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
+![Panoramic view of Rosas landslide. Sourced from InformeVisitaEmergencia](landslide1.png){#fig-annrain fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
 :::
 
 The landslide displays distinct patterns of movement and failure mechanisms across its various sections. In the uppermost region, known as the crown, where the movement commences, displacements are attributed to a rotational failure mechanism. Moving to the flanks, which constitute the lateral sides of the landslide, translational faults predominate. Within the body of the landslide, one observes intense deformation, sinking, and the formation of cracks, both transverse and parallel to the primary crown (Fig pics). In the lowermost part of the movement, termed the leg, situated furthest from the crown, translational landslides, soil block falls, and flows of earth, debris, and mud have been observed. These flows are channeled through areas with lower slopes. The dynamic interplay of these movements signifies the complex nature of the landslide, with its activity and behavior evolving in response to variations in water availability in the upper part of the basin.
 
 The initial phase of the mass movement was characterized by a rotational slide, evidenced by a semicircular curved and concave upward rupture surface. This phase exposed a vertical scarp reaching heights of up to 20 meters, composed of alternating layers of residual ash soils and pyroclastic flows from the Galeón Formation. Subsequently, a portion of the body adjacent to the crown tilted backward due to the concavity of the failure surface, resulting in ground subsidence. When the central region of the landslide became fully saturated with water, copious flows of earth and rock emanated from both sides of the landslide, as well as from its center.
 
-## Geology of the landslide site
+**Geology of the landslide location**
 
 In the microbasin of Chontaduro creek, a geological sequence unfolds, comprising both epiclastic and volcanic rocks attributed to the Galeón Formation (TQpg). Notably, these formations are prominently exposed in areas such as Cerro Broncazo and its environs, encompassing the Quilcacé and Esmita rivers. In these regions, the volcaniclastic deposits can attain substantial thicknesses, reaching up to 800 meters.
 
 This geological sequence stands out due to its distinctive characteristics, featuring abrupt scarps and gently sloping layers. These geological features are attributed by researchers to recent tectonic movements associated with the Mosquerillo-La Tetilla fault, a component of the Romeral Fault System.
 
-## Rainfall
+**Rainfall**
 
-The precipitation data for the study area was obtained from the Párraga weather station (Station Code: 52010050), which is managed by Ideam (Instituto de Hidrología, Meteorología y Estudios Ambientales de Colombia). The time series analyzed encompasses 33 years of recorded data, spanning from 1990 to 2023 (Figure \~\ref{fig:annrain}). The study region experiences two distinct rainy seasons: the first occurs from January to May, characterized by relatively lower rainfall compared to the second rainy season, which typically occurs between October and December.
+The precipitation data for the study area was obtained from the Párraga weather station (Station Code: 52010050), which is managed by Ideam (Instituto de Hidrología, Meteorología y Estudios Ambientales de Colombia). The time series analyzed encompasses 33 years of recorded data, spanning from 1990 to 2023 (@fig-annrain). The study region experiences two distinct rainy seasons: the first occurs from January to May, characterized by relatively lower rainfall compared to the second rainy season, which typically occurs between October and December.
 
-::: {layout-ncol="1"}
-![Total annual rainfall at the Parraga meteorological station.](annualRainfall.png){fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
-:::
-
-The daily time series recorded at the Párraga station exhibits a range of maximum daily precipitation values, varying between 0 mm and 95 mm. The highest recorded value, 94.8 mm, was documented on January 9th, which coincided with the onset of the landslide event (Figure \~\ref{fig:dayrain}). The cumulative rainfall data is meticulously computed over the 30-day period leading up to the triggering of the landslide, revealing an impressive total rainfall accumulation of 539.8 millimeters recorded up to January 9, 2023 (Figure \~\ref{fig:accdayr}).
+The daily time series recorded at the Párraga station exhibits a range of maximum daily precipitation values, varying between 0 mm and 95 mm. The highest recorded value, 94.8 mm, was documented on January 9th, which coincided with the onset of the landslide event (@fig-daily). The cumulative rainfall data is meticulously computed over the 30-day period leading up to the triggering of the landslide, revealing an impressive total rainfall accumulation of 539.8 millimeters recorded up to January 9, 2023 (@fig-acc).
 
 ::: {layout-ncol="1"}
-![Total daily rainfall at the Parraga meteorological station.](DailyRainfall.png){fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
+![Total daily rainfall at the Parraga meteorological station.](DailyRainfall.png){#fig-daily fig-align="center"}
 :::
 
 ::: {layout-ncol="1"}
-![Total daily rainfall at the Parraga meteorological station.](AccDailyRainfall.png){fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
+![Total daily accumulated rainfall at the Parraga meteorological station.](AccDailyRainfall.png){#fig-acc fig-align="center"}
 :::
 
 # Methods
 
-Aerial digital photographs of the landslide were captured on multiple occasions between January 9th and March 18th (see Table\~\ref{Tab:invent}). Predominantly, these flights were conducted at an altitude of 250 meters. Over the span of 17 days, a total of 22 flights were executed by three organizations specializing in risk management and emergency disaster response: Unidad Nacional para la Gestión del Riesgo (UNGRD), Servicio Geológico Colombiano (SGC), and Policía Nacional (PNAL). Despite the involvement of various institutions, uniformity was maintained in the equipment used, ensuring consistent resolution in the photographs. However, aspects such as flight altitude, coverage area, flight plan design, and the number of captured images exhibited significant variation.
+Aerial digital photographs of the landslide were captured on multiple occasions between January 9th and March 18th. Predominantly, these flights were conducted at an altitude of 250 meters. Over the span of 17 days, a total of 22 flights were executed by three organizations specializing in risk management and emergency disaster response: Unidad Nacional para la Gestión del Riesgo (UNGRD), Servicio Geológico Colombiano (SGC), and Policía Nacional (PNAL). Despite the involvement of various institutions, uniformity was maintained in the equipment used, ensuring consistent resolution in the photographs. However, aspects such as flight altitude, coverage area, flight plan design, and the number of captured images exhibited significant variation.
 
 A further challenge encountered in the data acquisition process was the georeferencing of the flights. During the initial flights, markers were not employed, leading to difficulties in precise location mapping. To address this, on May 18th, a set of markers was installed to ensure at least one flight could be accurately georeferenced. However, these newly placed markers proved too small to be discernible in images taken from higher altitudes. Consequently, to enhance the overall georeferencing accuracy of all flights, an independent survey was executed as part of this study, utilizing natural points as reference markers in the final survey.
 
 ## Point Cloud Generation
 
-The Structure from Motion (SfM) method uses algorithms to identify matching features in a series of overlapping digital images and calculates camera location and orientation from the differential positions of multiple matched features. From these calculations, overlapping imagery is then used to reconstruct a “sparse” or “coarse” 3D point cloud model of the photographed object or surface or scene. \cite{brook2019monitoring}. The software Agisoft Metashape \cite{Metashape2023} was used to undertake the SfM processing. In Metashape, the SFM processing comprises three key steps \cite{MetashapeManual2023}:
+The Structure from Motion (SfM) method uses algorithms to identify matching features in a series of overlapping digital images and calculates camera location and orientation from the differential positions of multiple matched features. From these calculations, overlapping imagery is then used to reconstruct a “sparse” or “coarse” 3D point cloud model of the photographed object or surface or scene. @brook2019monitoring. The software *Agisoft Metashape* was used to undertake the SfM processing. In Metashape, the SFM processing comprises three key steps @MetashapeManual2023:
 
 1.  *Alignment*: Involves aerial triangulation and bundle block adjustment, where the software identifies feature points on images, matches them into tie points and determine camera positions, resulting in a tie point cloud and camera positions for depth map determination and 3D reconstruction.
 2.  *Surface Generation*: Creates a 3D mesh or 2.5D digital elevation model (DEM), combining photogrammetric depth maps and LiDAR data, which can be textured and exported for various applications.
 3.  *Orthomosaic Creation*: Generates a georeferenced orthomosaic by projecting images onto a chosen surface (DEM or mesh), useful for mapping and analysis, including vegetation indices in multispectral imagery projects.
 
-In this study we adopted the workflow implemented in Agisoft Metashape, described in the User Manual v2.0 \cite{MetashapeManual2023}. The parameters used are described n the following sections.
+In this study we adopted the workflow implemented in Agisoft Metashape, described in the User Manual v2.0 @MetashapeManual2023. The parameters used are described n the following sections.
 
 ## Image loading and chunks definition
 
-Sixteen distinct chunks were produced by importing photographs from selected flights (refer to Table \~\ref{Tab:chunks}), of which five met key selection criteria: a sufficient quantity of photographs, high image quality characterized by proper exposure and sharpness, and extensive coverage of the landslide area. This careful selection was necessary as some flights were tasked with monitoring more restricted sectors of the mass movement, targeting specific areas such as the crown or the Pan-American Highway. For comprehensive area coverage and improved model resolution during that timeframe, photographs from January 18th and 19th were merged in one single chunk.
+Sixteen distinct chunks were produced by importing photographs from selected flights (refer to Table @tbl-chunks), of which five met key selection criteria: a sufficient quantity of photographs, high image quality characterized by proper exposure and sharpness, and extensive coverage of the landslide area. This careful selection was necessary as some flights were tasked with monitoring more restricted sectors of the mass movement, targeting specific areas such as the crown or the Pan-American Highway. For comprehensive area coverage and improved model resolution during that timeframe, photographs from January 18th and 19th were merged in one single chunk.
 
+::: {#tbl-chunks}
 | Chunks       | Cameras | Points    | Markers    | Processed |
 |--------------|---------|-----------|------------|-----------|
 | 1/14/2023    | 1491    | 880,613   | 19 markers | X         |
@@ -130,39 +127,42 @@ Sixteen distinct chunks were produced by importing photographs from selected fli
 | 3/30/2023    | 328     | 327,605   |            |           |
 | 5/18/2023    | 333     | 243,261   |            | X         |
 
+My caption
+:::
+
 ## Photos alignment and filtering
 
-In each chunk, the photographs underwent an alignment process with the accuracy setting set to high, utilizing equipment source coordinates as a reference point. Camera optimization was conducted, selecting the estimation of the covariance of tie points. Subsequently, apparent outliers were removed from the sparse cloud manually to diminish potential reconstruction inaccuracies. Additional refinement was carried out by filtering based on tie point covariance and uncertainties, employing Metashape's integrated Python scripting capabilities for a more precise adjustment (Figure \~\ref{Fig:covar}).
+In each chunk, the photographs underwent an alignment process with the accuracy setting set to high, utilizing equipment source coordinates as a reference point. Camera optimization was conducted, selecting the estimation of the covariance of tie points. Subsequently, apparent outliers were removed from the sparse cloud manually to diminish potential reconstruction inaccuracies. Additional refinement was carried out by filtering based on tie point covariance and uncertainties, employing Metashape's integrated Python scripting capabilities for a more precise adjustment (@fig-covar).
 
 ::: {layout-ncol="1"}
-![Tie point covariances obtained after filterin](covariance.png){fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
+![Tie point covariances obtained after filterin](covariance.png){#fig-covar fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
 :::
 
 ## Dense Point Cloud generation
 
-For all chosen chunks, a dense 3D point cloud was constructed employing high-quality settings and mild depth filtering. This detailed point cloud serves as the foundation for generating Digital Surface Models (DSM) and orthomosaics. Additional settings were selected to reuse depth maps, calculate point colors and calculate point confidence (Figure \~\ref{fig:dense}).
+For all chosen chunks, a dense 3D point cloud was constructed employing high-quality settings and mild depth filtering. This detailed point cloud serves as the foundation for generating Digital Surface Models (DSM) and orthomosaics. Additional settings were selected to reuse depth maps, calculate point colors and calculate point confidence (@fig-dense).
 
 ::: {layout-ncol="1"}
-![Dense point cloud for 14/01/2023](denseall.png){fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
+![Dense point cloud for 14/01/2023](denseall.png){#fig-dense fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
 :::
 
 ## Natural points definition and GNSS survey
 
-To accurately reference the point clouds, a series of natural markers were established to guarantee high-precision (centimeter-level) localization that was readily identifiable in the field. Utilized reference points included distinct features such as sewer edges, fence corners, and light posts (see Figure \~\ref{fig:marker12}). Out of the 27 natural markers delineated (see Figure \~\ref{fig:marker}), only 21 were successfully surveyed on-site. The survey faced several challenges, including the demolition of referenced structures, obscuring of markers by debris or soil, and inaccessible locations of certain points. The coordinates for each marker were recorded using a Trimble SPS855 GNSS Modular Receiver.
+To accurately reference the point clouds, a series of natural markers were established to guarantee high-precision (centimeter-level) localization that was readily identifiable in the field. Utilized reference points included distinct features such as sewer edges, fence corners, and light posts (see @fig-marker12). Out of the 27 natural markers delineated (see @fig-marker), only 21 were successfully surveyed on-site. The survey faced several challenges, including the demolition of referenced structures, obscuring of markers by debris or soil, and inaccessible locations of certain points. The coordinates for each marker were recorded using a Trimble SPS855 GNSS Modular Receiver.
 
 ::: {layout-ncol="1"}
-![Example of a marker defined](marker12.png){fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
+![Example of a marker defined](marker12.png){#fig-marker12 fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
 :::
 
 ::: {layout-ncol="1"}
-![Markers defined](markers.png){fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
+![Markers defined](markers.png){#fig-marker fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
 :::
 
 Following the download of raw data from the Trimble receiver, the post-processing software GrafNav was employed. GrafNav is an advanced GNSS post-processing suite that supports kinematic and static analysis with an advanced processing engine for GPS, GLONASS, and BeiDou signals. To refine the data, corrections were applied using the Popayan station (POPA), which is the station nearest to the collection site. The required data were acquired from the Colombian open data portal (https://www.colombiaenmapas.gov.co/). Both the RINEX files from the field-surveyed markers and the permanent station were inputted into GrafNav to execute the correction process. The precision-adjusted positions of the markers are shown in Table \~\ref{Tab:gnss}.
 
 ## Chunk alignment
 
-For a precise alignment of point clouds, the process begins with the correction of a designated reference point cloud; in this case, the cloud dated 01/14/2023 is used. The coordinates of the markers are revised using the data acquired from the recent field campaign. Following this update, camera parameters are re-optimized, and a new dense point cloud is generated. This newly referenced point cloud then serves as the reference for aligning subsequent point clouds through the point-based method, a technique available to align chunks within Agisoft.
+For a precise alignment of point clouds, the process begins with the correction of a designated reference point cloud; in this case, the cloud dated 01/14/2023 is used. The coordinates of the markers are revised using the data acquired from the recent field campaign. Following this update, camera parameters are re-optimized, and a new dense point cloud is generated. This newly referenced point cloud then serves as the reference for aligning subsequent point clouds through the point-based method, a technique available to align chunks within *Agisoft*.
 
 ## ICP registration
 
@@ -191,28 +191,5 @@ Pulli (1999) emphasize the advantages of the point-to-plane method compared to t
 
 # References
 
-Besl, P. J., & McKay, N. D. (1992). Method for registration of 3-d shapes. Sensor fusion IV: control paradigms and data structures, 1611, 586–606.
-
-Dittrich, A., Weinmann, M., & Hinz, S. (2017). Analytical and numerical investigations on the accuracy and robustness of geometric features extracted from 3d point cloud data. ISPRS journal of photogrammetry and remote sensing, 126, 195–208.
-
-Dung, L. -R., Huang, C.-M., Wu, Y. -Y., et al. (2013). Implementation of ransac algorithm for feature-based image registration. J. Comput. Commun, 1(6), 46–50.
-
-Grant, D., Bethel, J., & Crawford, M. (2013). Comparative study of two automatic registration algorithms. ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences, 2, 91–95.
-
-Li, P., Wang, R., Wang, Y., & Tao, W. (2020). Evaluation of the icp algorithm in 3d point cloud registration. IEEE Access, 8, 68030–68048.
-
-Liang, X., Kankare, V., Hyyppä, J., Wang, Y., Kukko, A., Haggrén, H., Yu, X., Kaartinen, H., Jaakkola, A., Guan, F., et al. (2016). Terrestrial laser scanning in forest inventories. ISPRS Journal of Photogrammetry and Remote Sensing, 115, 63–77.
-
-Lillesand, T., Kiefer, R. W., & Chipman, J. (2015). Remote sensing and image interpretation. John Wiley & Sons.
-
-Low, K.-L. (2004). Linear least-squares optimization for point-to-plane icp surface registration. Chapel Hill, University of North Carolina, 4(10), 1–3.
-
-Pfeifer, N., & Briese, C. (2007). Geometrical aspects of airborne laser scanning and ter- restrial laser scanning. International Archives of Photogrammetry, Remote Sensing and Spatial Information Sciences, 36(3/W52), 311–319.
-
-Pulli, K. (1999). Multiview registration for large data sets. Second international conference on 3-d digital imaging and modeling (cat. no. pr00062), 160–168.
-
-Rusu, R. B., Blodow, N., & Beetz, M. (2009). Fast point feature histograms (fpfh) for 3d registration. 2009 IEEE international conference on robotics and automation, 3212–3217.
-
-Salvi, J., Matabosch, C., Fofi, D., & Forest, J. (2007). A review of recent range image registration methods with accuracy evaluation. Image and Vision computing, 25(5), 578–596.
-
-Zhou, Q. -Y., Park, J., & Koltun, V. (2016). Fast global registration. Computer Vision–ECCV 2016: 14th European Conference, Amsterdam, The Netherlands, October 11-14, 2016, Proceedings, Part II 14, 766–782.
+::: {#refs}
+:::
