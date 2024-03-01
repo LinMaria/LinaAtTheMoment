@@ -25,10 +25,10 @@ about:
 ::: {#about-block}
 ## Welcome!
 
-I am a geologist from the National University of Colombia, currently pursuing a Master's degree in Remote Sensing Geoinformation and Communication at the University of Potsdam in Germany. Concurrently, I am engaged as a student assistant with the [Remote Sensing and Geoinformatics group](https://www.geo.fu-berlin.de/geog/fachrichtungen/geoinformatik/index.html) at the Freie Universität Berlin. 
+I am a geologist from the National University of Colombia, currently pursuing a Master's degree in Remote Sensing Geoinformation and Communication at the University of Potsdam in Germany. Additionally, I am engaged as a student assistant with the [Remote Sensing and Geoinformatics group](https://www.geo.fu-berlin.de/geog/fachrichtungen/geoinformatik/index.html) at the Freie Universität Berlin. 
 
 
-**My research interests:** Numerical modeling of surface processes, landslides, spatial data analysis applied to hazard and risk assessment.
+**My research interests:** Numerical modeling of surface processes, spatial data analysis applied to hazard and risk assessment.
 :::
 
 

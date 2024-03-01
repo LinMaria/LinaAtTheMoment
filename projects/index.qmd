@@ -10,6 +10,7 @@ toc: true
 toc_sticky: true
 bibliography: references.bib
 csl: begell-house-apa.csl
+fig-cap-location: bottom
 read_time: false
 tags:
   - TLS
@@ -19,33 +20,32 @@ tags:
   - ICP
 ---
 
-Landslides are destructive events that can have severe impacts on human communities. In the context of ongoing global changes, these outcomes, like other natural hazards, have the potential to worsen. The consequences of landslides can lead to various forms of damage and, in the worst-case scenario, result in casualties. Furthermore, larger landslides inherently carry a higher probability of causing these detrimental effects. Various techniques are currently employed to rapidly and cost-effectively assess large landslides.
+
+
+Landslides are natural disasters with devastating impacts on human communities. Like other natural hazards, their severity can escalate, especially with ongoing global climate change. Moreover, larger landslides can result in diverse forms of damage and, in the worst-case scenario, casualties. To address these challenges, advanced technologies such as UAV-based photogrammetry and LiDAR are currently being utilized to assess large landslides rapidly and cost-effectively. However, the precise georeferencing, co-registration, and alignment of UAV surveys collected from different devices with varying resolutions and coverage present significant challenges for data analysis. To tackle these challenges, this work explores different methods to ensure accuracy in the pre-processing of this type of data.
 
 # Introduction
 
-On January 9th, 2023, a catastrophic landslide severely impacted the upper basin of Chontaduro Creek, located in the municipality of Rosas-Cauca in southwestern Colombia. This event caused extensive damage to the communities of La Soledad, Santa Clara, Párraga Viejo, and Chontaduro, resulting in the destruction of at least 150 homes and a significant portion of the Pan-American highway, which connects southern Colombia to the rest of the country. Inhabitants of the region reported their initial observations of instability on January 4th when they noticed small cracks with lengths ranging from 20 cm to 30 cm forming in the crown area near the Alfonso Córdoba school. However, it was not until the period between the afternoon of January 9th and the morning of January 10th that the landslide's progression became starkly evident, leaving distinct markings on both the crown and flanks of the movement. Following this significant event, the landslide exhibited continuous and substantial activity until January 18th. By January 10th, the area affected by the mass movement had expanded to 64.72 hectares, and it further increased to 87.16 hectares by January 13th, ultimately reaching 89.12 hectares by January 18th.
+On January 9th, 2023, a catastrophic landslide severely impacted the upper basin of Chontaduro Creek, located in the municipality of Rosas-Cauca in southwestern Colombia (refer to @fig-sarea). This event caused extensive damage to the communities of La Soledad, Santa Clara, Párraga Viejo, and Chontaduro, resulting in the destruction of at least 150 homes and a significant portion of the Pan-American highway, which connects southern Colombia to the rest of the country. Inhabitants of the region reported their initial observations of instability on January 4th when they noticed small cracks with lengths ranging from 20 cm to 30 cm forming in the crown area near the Alfonso Córdoba school. However, it was not until the period between the afternoon of January 9th and the morning of January 10th that the landslide's progression became starkly evident, leaving distinct markings on both the crown and flanks of the movement. Following this significant event, the landslide exhibited continuous and substantial activity until January 18th. By January 10th, the area affected by the mass movement had expanded to 64.72 hectares, and it further increased to 87.16 hectares by January 13th, ultimately reaching 89.12 hectares by January 18th.
 
-The Rosas landslide, situated in Colombia, has been closely monitored by several government institutions, including UNGRD, the Geological Survey, and the National Armed Forces. These agencies have conducted numerous UAV (Unmanned Aerial Vehicle) flights to monitor the ongoing evolution of the landslide. Over the past decade, there has been a notable increase in the utilization of remote sensing technology for landslide mapping and monitoring. This surge in usage has been complemented by significant improvements in the spatial resolution of remote sensing technologies, particularly with the introduction of laser scanning (both airborne and terrestrial) and unmanned aerial vehicles (UAVs) (@niethammer2012uav). Earth observation methods are useful to produce detailed multi-temporal sets of images, orthophotos, and digital elevation models (DEMs). These products may provide insight into the flow kinematics such as flow rate, landslide expansion, and accumulation at the toe zone or retreating scarps. In addition, these new techniques allow volume calculations of the accumulated and removed material by the landslide and mapping of the topographic changes (@lucieer2014mapping).
+The Rosas landslide, situated in Colombia, has been closely monitored by several government institutions, including the *Unidad Nacional de Gestión del Riesgo* (UNGRD), the Geological Survey of Colombia (SGC), and the National Armed Forces. These agencies have conducted numerous UAV (Unmanned Aerial Vehicle) flights to monitor the ongoing evolution of the landslide. Over the past decade, there has been a notable increase in the utilization of remote sensing technology for landslide mapping and monitoring. This surge in usage has been complemented by significant improvements in the spatial resolution of remote sensing technologies, particularly with the introduction of laser scanning (both airborne and terrestrial) and unmanned aerial vehicles (UAVs) (@niethammer2012uav). Earth observation methods are useful to produce detailed multi-temporal sets of images, orthophotos, and digital elevation models (DEMs). These products may provide insight into the flow kinematics such as flow rate, landslide expansion, and accumulation at the toe zone or retreating scarps. In addition, these new techniques allow volume calculations of the accumulated and removed material by the landslide and mapping of the topographic changes (@lucieer2014mapping).
 
-Furthermore, recent advances in photogrammetric image processing and computer vision have resulted in a technique known as Structure from Motion (SfM). Highly detailed 3D models can be obtained from overlapping multi-view photography with SfM algorithms. While spaceborne and airborne remote sensing techniques are commonly employed for landslide research, these methods may lack the flexibility offered by the novel remote sensing platform of UAVs. When combined with UAV technology, Structure from Motion (SfM) can provide a cost-effective and efficient means of acquiring dense and accurate 3D data of the Earth's surface. In the present work, we compile and process all the UAV data collected for the Rosas landslide to generate multi-temporal and multi-scale 3D models. This compilation aims to offer a detailed investigation into the temporal and spatial behavior of the landslide, with a focus on providing situational awareness in the aftermath of the emergency phase and generating valuable information for crisis management.
+Furthermore, recent advances in photogrammetric image processing and computer vision have resulted in a technique known as Structure from Motion (SfM). Highly detailed 3D models can be obtained from overlapping multi-view photography with SfM algorithms. While spaceborne and airborne remote sensing techniques are commonly employed for landslide research, these methods may lack the flexibility offered by the novel remote sensing platform of UAVs. When combined with UAV technology, Structure from Motion (SfM) can provide a cost-effective and efficient means of acquiring dense and accurate 3D data of the Earth's surface. In this study, we investigate various methods for processing the extensive UAV data acquired for the Rosas landslide, aiming to produce accurately georeferenced and aligned 3D models.
 
 *This internship was supervised by Prof. Dr. Bodo Bookhagen.*
 
 # Study area
 
-The Rosas landslide occurred in the rural district of La Soledad, located within the municipality of Rosas-Cauca, situated in the southwestern region of Colombia. This region lies within the Patía Valley intercordilleran depression, nestled between the Western Cordillera and the Central Cordillera of Colombia. The primary drainage network affected is that of the Chontaduro creek, a tributary of the Esmita River, which is part of the upper Patía River basin (refer to @fig-sarea). According to the Atlas of Colombia (@igacatlas), the region experiences an average annual rainfall of 2,000 mm at the summit of the Central Cordillera and 3,000 mm at the summit of the Western Cordillera. Rainfall patterns indicate a distinct summer season during June, July, August, and September, followed by a rainy season during the remaining months.
+The Rosas landslide occurred in the rural district of La Soledad, located within the municipality of Rosas-Cauca, situated in the southwestern region of Colombia. This region lies within the Patía Valley intercordilleran depression, nestled between the Western Cordillera and the Central Cordillera of Colombia. The primary drainage network affected is that of the Chontaduro creek, a tributary of the Esmita River, which is part of the upper Patía River basin (refer to @fig-sarea). 
 
 ::: {layout-ncol="1"}
-![Shaded relief map of study area, showing main rivers and towns](RosasStudArea.jpg){#fig-sarea fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
+![Shaded relief map of study area, showing major rivers, towns and a multi-temporal landslide inventory, sourced from @sgc2020](RosasStudArea.jpg){#fig-sarea fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
 :::
 
 The study area is situated within the western range of the Colombian Andes, a region characterized by its susceptibility to landslides. This vulnerability arises from a combination of factors including steep terrain, adverse weather conditions, and the presence of soils derived from volcanic deposits originating from the Sotará volcanic complex. A comprehensive study conducted by the Geological Survey of Colombia-SGC (@sgc2020), examined the development and distribution of landslide in the region. Their investigation identified a total of 273 landslide events occurring within the municipality of Rosas during the period spanning from 1990 to 2019. Of these occurrences, five were deemed severe, leading to tragic casualties, substantial economic losses, and considerable damage to critical infrastructure.
 
-As depicted in Figure @fig-inven, the area has a historical record of being affected by landslides of varying magnitudes. However, the Rosas landslide, which is the focal point of our study, stands out as the largest landslide identified in the surrounding region since 1990.
+As depicted in Figure @fig-sarea, the area has a historical record of being affected by landslides of varying magnitudes. However, the Rosas landslide, which is the focal point of our study, stands out as the largest landslide identified in the surrounding region since 1990.
 
-::: {layout-ncol="1"}
-![Multi-temporal landslide inventory in the study area, sourced from @sgc2020](LandslideInventory.jpg){#fig-inven fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
-:::
 
 ## Geological setting
 
@@ -63,19 +63,24 @@ The Rosas mass movement, situated within the micro-basin of Chontaduro creek, is
 ![Panoramic view of Rosas landslide. Sourced from InformeVisitaEmergencia](landslide1.png){#fig-annrain fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
 :::
 
-The landslide displays distinct patterns of movement and failure mechanisms across its various sections. In the uppermost region, known as the crown, where the movement commences, displacements are attributed to a rotational failure mechanism. Moving to the flanks, which constitute the lateral sides of the landslide, translational faults predominate. Within the body of the landslide, one observes intense deformation, sinking, and the formation of cracks, both transverse and parallel to the primary crown (Fig pics). In the lowermost part of the movement, termed the leg, situated furthest from the crown, translational landslides, soil block falls, and flows of earth, debris, and mud have been observed. These flows are channeled through areas with lower slopes. The dynamic interplay of these movements signifies the complex nature of the landslide, with its activity and behavior evolving in response to variations in water availability in the upper part of the basin.
+The landslide displays distinct patterns of movement and failure mechanisms across its various sections. In the uppermost region, known as the crown, where the movement commences, displacements are attributed to a rotational failure mechanism. Moving to the flanks, which constitute the lateral sides of the landslide, translational faults predominate. Within the body of the landslide, one observes intense deformation, sinking, and the formation of cracks, both transverse and parallel to the primary crown (@fig-landetail). In the lowermost part of the movement, termed the toe, situated furthest from the crown, translational landslides, soil block falls, and flows of earth, debris, and mud have been observed. These flows are channeled through areas with lower slopes. The dynamic interplay of these movements signifies the complex nature of the landslide, with its activity and behavior evolving in response to variations in water availability in the upper part of the basin.
+
+::: {layout-ncol="1"}
+![Identifiable characteristics across the crown, body, and toe of the landslide: 1) A curved concave rupture surface creating a scarp measuring up to 20 meters in height. 2) Presence of tilted blocks, subsidence, and formation of cracks. 3) Occurrence of translational slides and debris flows.](landslide-detail.jpg){#fig-landetail fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
+:::
+
+
+**Geology and failure surface**
 
 The initial phase of the mass movement was characterized by a rotational slide, evidenced by a semicircular curved and concave upward rupture surface. This phase exposed a vertical scarp reaching heights of up to 20 meters, composed of alternating layers of residual ash soils and pyroclastic flows from the Galeón Formation. Subsequently, a portion of the body adjacent to the crown tilted backward due to the concavity of the failure surface, resulting in ground subsidence. When the central region of the landslide became fully saturated with water, copious flows of earth and rock emanated from both sides of the landslide, as well as from its center.
-
-**Geology of the landslide location**
 
 In the microbasin of Chontaduro creek, a geological sequence unfolds, comprising both epiclastic and volcanic rocks attributed to the Galeón Formation (TQpg). Notably, these formations are prominently exposed in areas such as Cerro Broncazo and its environs, encompassing the Quilcacé and Esmita rivers. In these regions, the volcaniclastic deposits can attain substantial thicknesses, reaching up to 800 meters.
 
 This geological sequence stands out due to its distinctive characteristics, featuring abrupt scarps and gently sloping layers. These geological features are attributed by researchers to recent tectonic movements associated with the Mosquerillo-La Tetilla fault, a component of the Romeral Fault System.
 
-**Rainfall**
+**Rainfall as trigger mechanism**
 
-The precipitation data for the study area was obtained from the Párraga weather station (Station Code: 52010050), which is managed by Ideam (Instituto de Hidrología, Meteorología y Estudios Ambientales de Colombia). The time series analyzed encompasses 33 years of recorded data, spanning from 1990 to 2023 (@fig-annrain). The study region experiences two distinct rainy seasons: the first occurs from January to May, characterized by relatively lower rainfall compared to the second rainy season, which typically occurs between October and December.
+According to the Atlas of Colombia (@igacatlas), the region experiences an average annual rainfall of 2,000 mm at the summit of the Central Cordillera and 3,000 mm at the summit of the Western Cordillera. Rainfall patterns indicate a distinct summer season during June, July, August, and September, followed by a rainy season during the remaining months. The precipitation data for the study area was obtained from the Párraga weather station (Station Code: 52010050), which is managed by IDEAM (Instituto de Hidrología, Meteorología y Estudios Ambientales de Colombia). The time series analyzed encompasses 33 years of recorded data, spanning from 1990 to 2023 (@fig-annrain). The study region experiences two distinct rainy seasons: the first occurs from January to May, characterized by relatively lower rainfall compared to the second rainy season, which typically occurs between October and December.
 
 The daily time series recorded at the Párraga station exhibits a range of maximum daily precipitation values, varying between 0 mm and 95 mm. The highest recorded value, 94.8 mm, was documented on January 9th, which coincided with the onset of the landslide event (@fig-daily). The cumulative rainfall data is meticulously computed over the 30-day period leading up to the triggering of the landslide, revealing an impressive total rainfall accumulation of 539.8 millimeters recorded up to January 9, 2023 (@fig-acc).
 
@@ -107,7 +112,7 @@ In this study we adopted the workflow implemented in Agisoft Metashape, describe
 
 Sixteen distinct chunks were produced by importing photographs from selected flights (refer to Table @tbl-chunks), of which five met key selection criteria: a sufficient quantity of photographs, high image quality characterized by proper exposure and sharpness, and extensive coverage of the landslide area. This careful selection was necessary as some flights were tasked with monitoring more restricted sectors of the mass movement, targeting specific areas such as the crown or the Pan-American Highway. For comprehensive area coverage and improved model resolution during that timeframe, photographs from January 18th and 19th were merged in one single chunk.
 
-::: {#tbl-chunks}
+::: table
 | Chunks       | Cameras | Points    | Markers    | Processed |
 |--------------|---------|-----------|------------|-----------|
 | 1/14/2023    | 1491    | 880,613   | 19 markers | X         |
@@ -127,7 +132,7 @@ Sixteen distinct chunks were produced by importing photographs from selected fli
 | 3/30/2023    | 328     | 327,605   |            |           |
 | 5/18/2023    | 333     | 243,261   |            | X         |
 
-My caption
+: GNSS data corrected in Grafnav {#tbl-chunks}
 :::
 
 ## Photos alignment and filtering
@@ -170,7 +175,7 @@ Unlike global alignment, fine registration methods require two point clouds that
 
 **Point-to-point ICP**
 
-The Iterative Closest Point (ICP) registration method using the point-to-point variant was introduced by Besl and McKay (1992). This iterative algorithm consists of two stages in each iteration:
+The Iterative Closest Point (ICP) registration method using the point-to-point variant was introduced by Besl and McKay (1992). This iterative algorithm consists of two stages in each iteration:   
 
 -   First, for each point in the source point cloud, it searches for the closest point in the target point cloud.
 -   Second, it attempts to find a transformation that minimizes the distance between the corresponding points.
