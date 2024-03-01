@@ -60,7 +60,7 @@ The geological setting of the study area is profoundly influenced by its locatio
 The Rosas mass movement, situated within the micro-basin of Chontaduro creek, is characterized as an active rotational landslide of a complex nature, exhibiting retrogressive and widening behavior. This landslide initiation point is positioned 900 meters from the summit of Broncazo Hill and 700 meters from its base (@fig-annrain).
 
 ::: {layout-ncol="1"}
-![Panoramic view of Rosas landslide. Sourced from InformeVisitaEmergencia](landslide1.png){#fig-annrain fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
+![Panoramic view of Rosas landslide. Sourced from @InformeVisitaEmergencia](landslide1.png){#fig-annrain fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
 :::
 
 The landslide displays distinct patterns of movement and failure mechanisms across its various sections. In the uppermost region, known as the crown, where the movement commences, displacements are attributed to a rotational failure mechanism. Moving to the flanks, which constitute the lateral sides of the landslide, translational faults predominate. Within the body of the landslide, one observes intense deformation, sinking, and the formation of cracks, both transverse and parallel to the primary crown (@fig-landetail). In the lowermost part of the movement, termed the toe, situated furthest from the crown, translational landslides, soil block falls, and flows of earth, debris, and mud have been observed. These flows are channeled through areas with lower slopes. The dynamic interplay of these movements signifies the complex nature of the landslide, with its activity and behavior evolving in response to variations in water availability in the upper part of the basin.
