@@ -88,8 +88,6 @@ background-size: cover;
       }
 </style>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -101,7 +99,7 @@ background-size: cover;
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../img/logo.JPG" alt="" class="navbar-logo">
+    <img src="../img/favicon.png" alt="" class="navbar-logo">
     </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Lina Maria Pérez</span>
@@ -260,7 +258,7 @@ background-size: cover;
 <div id="fig-annrain" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="landslide1.png" class="img-fluid figure-img" alt="Rosas, Cauca - Colombia"></p>
-<figcaption class="figure-caption">Figure&nbsp;3: Panoramic view of Rosas landslide. Sourced from <span class="citation" data-cites="InformeVisitaEmergencia">SGC (<a href="#ref-InformeVisitaEmergencia" role="doc-biblioref">n.d.</a>)</span></figcaption>
+<figcaption class="figure-caption">Figure&nbsp;3: Panoramic view of Rosas landslide. Sourced from <span class="citation" data-cites="InformeVisitaEmergencia">SGC (<a href="#ref-InformeVisitaEmergencia" role="doc-biblioref">2023</a>)</span></figcaption>
 </figure>
 </div>
 </div>
@@ -284,7 +282,7 @@ background-size: cover;
 <p>In the microbasin of Chontaduro creek, a geological sequence unfolds, comprising both epiclastic and volcanic rocks attributed to the Galeón Formation (TQpg). Notably, these formations are prominently exposed in areas such as Cerro Broncazo and its environs, encompassing the Quilcacé and Esmita rivers. In these regions, the volcaniclastic deposits can attain substantial thicknesses, reaching up to 800 meters.</p>
 <p>This geological sequence stands out due to its distinctive characteristics, featuring abrupt scarps and gently sloping layers. These geological features are attributed by researchers to recent tectonic movements associated with the Mosquerillo-La Tetilla fault, a component of the Romeral Fault System.</p>
 <p><strong>Rainfall as trigger mechanism</strong></p>
-<p>According to the Atlas of Colombia (<span class="citation" data-cites="igacatlas">IGAC (<a href="#ref-igacatlas" role="doc-biblioref">n.d.</a>)</span>), the region experiences an average annual rainfall of 2,000 mm at the summit of the Central Cordillera and 3,000 mm at the summit of the Western Cordillera. Rainfall patterns indicate a distinct summer season during June, July, August, and September, followed by a rainy season during the remaining months. The precipitation data for the study area was obtained from the Párraga weather station (Station Code: 52010050), which is managed by IDEAM (Instituto de Hidrología, Meteorología y Estudios Ambientales de Colombia). The time series analyzed encompasses 33 years of recorded data, spanning from 1990 to 2023 (<a href="#fig-annrain">Figure&nbsp;3</a>). The study region experiences two distinct rainy seasons: the first occurs from January to May, characterized by relatively lower rainfall compared to the second rainy season, which typically occurs between October and December.</p>
+<p>According to the Atlas of Colombia (<span class="citation" data-cites="igacatlas">IGAC (<a href="#ref-igacatlas" role="doc-biblioref">2012</a>)</span>), the region experiences an average annual rainfall of 2,000 mm at the summit of the Central Cordillera and 3,000 mm at the summit of the Western Cordillera. Rainfall patterns indicate a distinct summer season during June, July, August, and September, followed by a rainy season during the remaining months. The precipitation data for the study area was obtained from the Párraga weather station (Station Code: 52010050), which is managed by IDEAM (Instituto de Hidrología, Meteorología y Estudios Ambientales de Colombia). The time series analyzed encompasses 33 years of recorded data, spanning from 1990 to 2023 (<a href="#fig-annrain">Figure&nbsp;3</a>). The study region experiences two distinct rainy seasons: the first occurs from January to May, characterized by relatively lower rainfall compared to the second rainy season, which typically occurs between October and December.</p>
 <p>The daily time series recorded at the Párraga station exhibits a range of maximum daily precipitation values, varying between 0 mm and 95 mm. The highest recorded value, 94.8 mm, was documented on January 9th, which coincided with the onset of the landslide event (<a href="#fig-daily">Figure&nbsp;5</a>). The cumulative rainfall data is meticulously computed over the 30-day period leading up to the triggering of the landslide, revealing an impressive total rainfall accumulation of 539.8 millimeters recorded up to January 9, 2023 (<a href="#fig-acc">Figure&nbsp;6</a>).</p>
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
@@ -331,7 +329,7 @@ background-size: cover;
 <div class="table">
 <div id="tbl-chunks" class="anchored">
 <table class="table">
-<caption>Table&nbsp;1: GNSS data corrected in Grafnav</caption>
+<caption>Table&nbsp;1: Point clouds generated in <em>Agisoft</em></caption>
 <thead>
 <tr class="header">
 <th>Chunks</th>
@@ -518,7 +516,306 @@ background-size: cover;
 </div>
 </div>
 </div>
-<p>Following the download of raw data from the Trimble receiver, the post-processing software GrafNav was employed. GrafNav is an advanced GNSS post-processing suite that supports kinematic and static analysis with an advanced processing engine for GPS, GLONASS, and BeiDou signals. To refine the data, corrections were applied using the Popayan station (POPA), which is the station nearest to the collection site. The required data were acquired from the Colombian open data portal (https://www.colombiaenmapas.gov.co/). Both the RINEX files from the field-surveyed markers and the permanent station were inputted into GrafNav to execute the correction process. The precision-adjusted positions of the markers are shown in Table ~<span class="math inline">\(\ref{Tab:gnss}\)</span>.</p>
+<p>Following the download of raw data from the Trimble receiver, the post-processing software GrafNav was employed. GrafNav is an advanced GNSS post-processing suite that supports kinematic and static analysis with an advanced processing engine for GPS, GLONASS, and BeiDou signals. To refine the data, corrections were applied using the Popayan station (POPA), which is the station nearest to the collection site. The required data were acquired from the Colombian open data portal (https://www.colombiaenmapas.gov.co/). Both the RINEX files from the field-surveyed markers and the permanent station were inputted into GrafNav to execute the correction process. The precision-adjusted positions of the markers are shown in <a href="#tbl-gnss">Table&nbsp;2</a> and <a href="#fig-gnssgraf">Figure&nbsp;11</a>.</p>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<div id="fig-gnssgraf" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="GNSS_grafnav.png" class="img-fluid figure-img" alt="Rosas, Cauca - Colombia"></p>
+<figcaption class="figure-caption">Figure&nbsp;11: Points depict the resulting standard deviation for horizontal and height measurements, while bars illustrate a quality metric established by GrafNav.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="table">
+<div id="tbl-gnss" class="anchored">
+<table class="table">
+<caption>Table&nbsp;2: GNSS data corrected in Grafnav</caption>
+<colgroup>
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Date</strong></th>
+<th>GPSTime</th>
+<th><strong>Easting</strong></th>
+<th><strong>Northing</strong></th>
+<th><strong>H-Ell</strong></th>
+<th><strong>H-MSL</strong></th>
+<th><strong>Q</strong></th>
+<th>SDHoriz</th>
+<th><strong>SDHeigh (m)</strong></th>
+<th><strong>Marker</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>8/09/2023</td>
+<td>32:23.0</td>
+<td>302995,460</td>
+<td>248590,161</td>
+<td>1514963</td>
+<td>1486998</td>
+<td>1</td>
+<td>0,016</td>
+<td>0,028</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>8/09/2023</td>
+<td>59:34.0</td>
+<td>302445,401</td>
+<td>247995,626</td>
+<td>1346507</td>
+<td>1318573</td>
+<td>3</td>
+<td>0,12</td>
+<td>0,072</td>
+<td>12</td>
+</tr>
+<tr class="odd">
+<td>8/09/2023</td>
+<td>32:47.0</td>
+<td>302540,380</td>
+<td>247938,191</td>
+<td>1342117</td>
+<td>1314170</td>
+<td>5</td>
+<td>0,559</td>
+<td>0,402</td>
+<td>13</td>
+</tr>
+<tr class="even">
+<td>8/09/2023</td>
+<td>50:24.0</td>
+<td>302928,080</td>
+<td>248596,004</td>
+<td>1508566</td>
+<td>1480608</td>
+<td>3</td>
+<td>0,18</td>
+<td>0,112</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>8/09/2023</td>
+<td>01:48.0</td>
+<td>302956,219</td>
+<td>248607,942</td>
+<td>1512854</td>
+<td>1484894</td>
+<td>4</td>
+<td>0,367</td>
+<td>0,129</td>
+<td>25</td>
+</tr>
+<tr class="even">
+<td>8/09/2023</td>
+<td>25:50.0</td>
+<td>302984,155</td>
+<td>248601,450</td>
+<td>1513498</td>
+<td>1485535</td>
+<td>5</td>
+<td>0,257</td>
+<td>0,13</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td>8/10/2023</td>
+<td>53:34.0</td>
+<td>302155,060</td>
+<td>247741,470</td>
+<td>1338077</td>
+<td>1310161</td>
+<td>6</td>
+<td>0,291</td>
+<td>0,181</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td>8/10/2023</td>
+<td>26:29.0</td>
+<td>302045,545</td>
+<td>247650,392</td>
+<td>1328182</td>
+<td>1300273</td>
+<td>3</td>
+<td>0,347</td>
+<td>0,215</td>
+<td>21</td>
+</tr>
+<tr class="odd">
+<td>8/10/2023</td>
+<td>29:50.0</td>
+<td>302207,493</td>
+<td>247767,666</td>
+<td>1341687</td>
+<td>1313767</td>
+<td>2</td>
+<td>0,243</td>
+<td>0,138</td>
+<td>23</td>
+</tr>
+<tr class="even">
+<td>8/10/2023</td>
+<td>03:19.0</td>
+<td>302229,752</td>
+<td>247892,380</td>
+<td>1344103</td>
+<td>1316187</td>
+<td>3</td>
+<td>0,343</td>
+<td>0,217</td>
+<td>24</td>
+</tr>
+<tr class="odd">
+<td>8/10/2023</td>
+<td>10:53.0</td>
+<td>301981,062</td>
+<td>248881,942</td>
+<td>1547867</td>
+<td>1520018</td>
+<td>3</td>
+<td>0,263</td>
+<td>0,137</td>
+<td>26</td>
+</tr>
+<tr class="even">
+<td>8/10/2023</td>
+<td>58:14.0</td>
+<td>301798,636</td>
+<td>248108,698</td>
+<td>1446887</td>
+<td>1419024</td>
+<td>3</td>
+<td>0,19</td>
+<td>0,117</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td>8/10/2023</td>
+<td>09:31.0</td>
+<td>301847,911</td>
+<td>248155,130</td>
+<td>1446869</td>
+<td>1419003</td>
+<td>3</td>
+<td>0,364</td>
+<td>0,186</td>
+<td>6</td>
+</tr>
+<tr class="even">
+<td>8/10/2023</td>
+<td>31:22.0</td>
+<td>301868,008</td>
+<td>248170,170</td>
+<td>1446827</td>
+<td>1418960</td>
+<td>3</td>
+<td>0,147</td>
+<td>0,072</td>
+<td>7</td>
+</tr>
+<tr class="odd">
+<td>8/10/2023</td>
+<td>30:20.0</td>
+<td>301875,048</td>
+<td>248297,576</td>
+<td>1452434</td>
+<td>1424571</td>
+<td>3</td>
+<td>0,235</td>
+<td>0,161</td>
+<td>8</td>
+</tr>
+<tr class="even">
+<td>8/10/2023</td>
+<td>00:47.0</td>
+<td>301968,070</td>
+<td>248386,332</td>
+<td>1451916</td>
+<td>1424048</td>
+<td>4</td>
+<td>0,235</td>
+<td>0,09</td>
+<td>9</td>
+</tr>
+<tr class="odd">
+<td>8/11/2023</td>
+<td>58:29.0</td>
+<td>301263,276</td>
+<td>246688,966</td>
+<td>1308378</td>
+<td>1280506</td>
+<td>4</td>
+<td>0,656</td>
+<td>0,64</td>
+<td>17</td>
+</tr>
+<tr class="even">
+<td>8/11/2023</td>
+<td>40:23.0</td>
+<td>301456,505</td>
+<td>246350,882</td>
+<td>1292738</td>
+<td>1264830</td>
+<td>2</td>
+<td>0,054</td>
+<td>0,055</td>
+<td>18</td>
+</tr>
+<tr class="odd">
+<td>8/11/2023</td>
+<td>04:19.0</td>
+<td>301430,773</td>
+<td>246394,964</td>
+<td>1296034</td>
+<td>1268131</td>
+<td>2</td>
+<td>0,077</td>
+<td>0,064</td>
+<td>19</td>
+</tr>
+<tr class="even">
+<td>8/11/2023</td>
+<td>30:58.0</td>
+<td>301364,741</td>
+<td>246498,245</td>
+<td>1300102</td>
+<td>1272211</td>
+<td>4</td>
+<td>0,364</td>
+<td>0,259</td>
+<td>20</td>
+</tr>
+<tr class="odd">
+<td>8/11/2023</td>
+<td>34:20.0</td>
+<td>301586,893</td>
+<td>247430,776</td>
+<td>1319567</td>
+<td>1291696</td>
+<td>5</td>
+<td>0,604</td>
+<td>0,323</td>
+<td>27</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </section>
 <section id="chunk-alignment" class="level2">
 <h2 class="anchored" data-anchor-id="chunk-alignment">Chunk alignment</h2>
@@ -555,7 +852,7 @@ Agisoft. (2023). <em>Metashape professional 2.0 user manual</em>. Retrieved from
 Brook, M. S., &amp; Merkle, J. (2019). Monitoring active landslides in the auckland region utilising UAV/structure-from-motion photogrammetry. <em>Japanese Geotechnical Society Special Publication</em>, <em>6</em>(2), 1–6.
 </div>
 <div id="ref-igacatlas" class="csl-entry" role="listitem">
-IGAC. (n.d.). Atlas geogr<span>á</span>fico. In Obtenido de http://atlasgeografico. net/departamento-del-meta. html.
+IGAC. (2012). Atlas geogr<span>á</span>fico. In Obtenido de http://atlasgeografico. net/departamento-del-meta. html.
 </div>
 <div id="ref-lucieer2014mapping" class="csl-entry" role="listitem">
 Lucieer, A., Jong, S. M. de, &amp; Turner, D. (2014). Mapping landslide displacements using structure from motion (SfM) and image correlation of multi-temporal UAV photography. <em>Progress in Physical Geography</em>, <em>38</em>(1), 97–116.
@@ -566,11 +863,11 @@ Niethammer, U., James, M., Rothmund, S., Travelletti, J., &amp; Joswig, M. (2012
 <div id="ref-pulido2003seismotectonics" class="csl-entry" role="listitem">
 Pulido, N. (2003). Seismotectonics of the northern andes (colombia) and the development of seismic networks. <em>Bulletin of the International Institute of Seismology and Earthquake Engineering, Special Edition</em>, 69–76.
 </div>
-<div id="ref-InformeVisitaEmergencia" class="csl-entry" role="listitem">
-SGC. (n.d.). <em>Informe visita de emergencia a la microcuenca de la quebrada chontaduro y concepto técnico sobre el trazado alterno de la vía panamericana – municipio de rosas, departamento del cauca</em>. Bogotá, enero de 2023.
-</div>
 <div id="ref-sgc2020" class="csl-entry" role="listitem">
 SGC. (2020). <em>ZONIFICACIÓN DE AMENAZA POR MOVIMIENTOS EN MASA EN EL MUNICIPIO DE ROSAS – CAUCA ESCALA 1:25.000</em>.
+</div>
+<div id="ref-InformeVisitaEmergencia" class="csl-entry" role="listitem">
+SGC. (2023). <em>Informe visita de emergencia a la microcuenca de la quebrada chontaduro y concepto técnico sobre el trazado alterno de la vía panamericana – municipio de rosas, departamento del cauca</em>. Bogotá, enero de 2023.
 </div>
 <div id="ref-taboada2000geodynamics" class="csl-entry" role="listitem">
 Taboada, A., Rivera, L. A., Fuenzalida, A., Cisternas, A., Philip, H., Bijwaard, H., Olaya, J., &amp; Rivera, C. (2000). Geodynamics of the northern andes: Subductions and intracontinental deformation (colombia). <em>Tectonics</em>, <em>19</em>(5), 787–813.

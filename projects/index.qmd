@@ -20,8 +20,6 @@ tags:
   - ICP
 ---
 
-
-
 Landslides are natural disasters with devastating impacts on human communities. Like other natural hazards, their severity can escalate, especially with ongoing global climate change. Moreover, larger landslides can result in diverse forms of damage and, in the worst-case scenario, casualties. To address these challenges, advanced technologies such as UAV-based photogrammetry and LiDAR are currently being utilized to assess large landslides rapidly and cost-effectively. However, the precise georeferencing, co-registration, and alignment of UAV surveys collected from different devices with varying resolutions and coverage present significant challenges for data analysis. To tackle these challenges, this work explores different methods to ensure accuracy in the pre-processing of this type of data.
 
 # Introduction
@@ -36,7 +34,7 @@ Furthermore, recent advances in photogrammetric image processing and computer vi
 
 # Study area
 
-The Rosas landslide occurred in the rural district of La Soledad, located within the municipality of Rosas-Cauca, situated in the southwestern region of Colombia. This region lies within the Patía Valley intercordilleran depression, nestled between the Western Cordillera and the Central Cordillera of Colombia. The primary drainage network affected is that of the Chontaduro creek, a tributary of the Esmita River, which is part of the upper Patía River basin (refer to @fig-sarea). 
+The Rosas landslide occurred in the rural district of La Soledad, located within the municipality of Rosas-Cauca, situated in the southwestern region of Colombia. This region lies within the Patía Valley intercordilleran depression, nestled between the Western Cordillera and the Central Cordillera of Colombia. The primary drainage network affected is that of the Chontaduro creek, a tributary of the Esmita River, which is part of the upper Patía River basin (refer to @fig-sarea).
 
 ::: {layout-ncol="1"}
 ![Shaded relief map of study area, showing major rivers, towns and a multi-temporal landslide inventory, sourced from @sgc2020](RosasStudArea.jpg){#fig-sarea fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
@@ -45,7 +43,6 @@ The Rosas landslide occurred in the rural district of La Soledad, located within
 The study area is situated within the western range of the Colombian Andes, a region characterized by its susceptibility to landslides. This vulnerability arises from a combination of factors including steep terrain, adverse weather conditions, and the presence of soils derived from volcanic deposits originating from the Sotará volcanic complex. A comprehensive study conducted by the Geological Survey of Colombia-SGC (@sgc2020), examined the development and distribution of landslide in the region. Their investigation identified a total of 273 landslide events occurring within the municipality of Rosas during the period spanning from 1990 to 2019. Of these occurrences, five were deemed severe, leading to tragic casualties, substantial economic losses, and considerable damage to critical infrastructure.
 
 As depicted in Figure @fig-sarea, the area has a historical record of being affected by landslides of varying magnitudes. However, the Rosas landslide, which is the focal point of our study, stands out as the largest landslide identified in the surrounding region since 1990.
-
 
 ## Geological setting
 
@@ -68,7 +65,6 @@ The landslide displays distinct patterns of movement and failure mechanisms acro
 ::: {layout-ncol="1"}
 ![Identifiable characteristics across the crown, body, and toe of the landslide: 1) A curved concave rupture surface creating a scarp measuring up to 20 meters in height. 2) Presence of tilted blocks, subsidence, and formation of cracks. 3) Occurrence of translational slides and debris flows.](landslide-detail.jpg){#fig-landetail fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
 :::
-
 
 **Geology and failure surface**
 
@@ -132,7 +128,7 @@ Sixteen distinct chunks were produced by importing photographs from selected fli
 | 3/30/2023    | 328     | 327,605   |            |           |
 | 5/18/2023    | 333     | 243,261   |            | X         |
 
-: GNSS data corrected in Grafnav {#tbl-chunks}
+: Point clouds generated in *Agisoft* {#tbl-chunks}
 :::
 
 ## Photos alignment and filtering
@@ -163,7 +159,42 @@ To accurately reference the point clouds, a series of natural markers were estab
 ![Markers defined](markers.png){#fig-marker fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
 :::
 
-Following the download of raw data from the Trimble receiver, the post-processing software GrafNav was employed. GrafNav is an advanced GNSS post-processing suite that supports kinematic and static analysis with an advanced processing engine for GPS, GLONASS, and BeiDou signals. To refine the data, corrections were applied using the Popayan station (POPA), which is the station nearest to the collection site. The required data were acquired from the Colombian open data portal (https://www.colombiaenmapas.gov.co/). Both the RINEX files from the field-surveyed markers and the permanent station were inputted into GrafNav to execute the correction process. The precision-adjusted positions of the markers are shown in Table \~\ref{Tab:gnss}.
+Following the download of raw data from the Trimble receiver, the post-processing software GrafNav was employed. GrafNav is an advanced GNSS post-processing suite that supports kinematic and static analysis with an advanced processing engine for GPS, GLONASS, and BeiDou signals. To refine the data, corrections were applied using the Popayan station (POPA), which is the station nearest to the collection site. The required data were acquired from the Colombian open data portal (https://www.colombiaenmapas.gov.co/). Both the RINEX files from the field-surveyed markers and the permanent station were inputted into GrafNav to execute the correction process. The precision-adjusted positions of the markers are shown in @Tbl-gnss and @fig-gnssgraf.
+
+
+
+::: {layout-ncol="1"}
+
+![Points depict the resulting standard deviation for horizontal and height measurements, while bars illustrate a quality metric established by GrafNav.](GNSS_grafnav.png){#fig-gnssgraf fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
+:::
+
+::: table
+| **Date**  | GPSTime | **Easting** | **Northing** | **H-Ell** | **H-MSL** | **Q** | SDHoriz | **SDHeigh (m)** | **Marker** |
+|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
+| 8/09/2023 | 32:23.0 | 302995,460  | 248590,161   | 1514963   | 1486998   | 1     | 0,016   | 0,028           | 1          |
+| 8/09/2023 | 59:34.0 | 302445,401  | 247995,626   | 1346507   | 1318573   | 3     | 0,12    | 0,072           | 12         |
+| 8/09/2023 | 32:47.0 | 302540,380  | 247938,191   | 1342117   | 1314170   | 5     | 0,559   | 0,402           | 13         |
+| 8/09/2023 | 50:24.0 | 302928,080  | 248596,004   | 1508566   | 1480608   | 3     | 0,18    | 0,112           | 2          |
+| 8/09/2023 | 01:48.0 | 302956,219  | 248607,942   | 1512854   | 1484894   | 4     | 0,367   | 0,129           | 25         |
+| 8/09/2023 | 25:50.0 | 302984,155  | 248601,450   | 1513498   | 1485535   | 5     | 0,257   | 0,13            | 3          |
+| 8/10/2023 | 53:34.0 | 302155,060  | 247741,470   | 1338077   | 1310161   | 6     | 0,291   | 0,181           | 10         |
+| 8/10/2023 | 26:29.0 | 302045,545  | 247650,392   | 1328182   | 1300273   | 3     | 0,347   | 0,215           | 21         |
+| 8/10/2023 | 29:50.0 | 302207,493  | 247767,666   | 1341687   | 1313767   | 2     | 0,243   | 0,138           | 23         |
+| 8/10/2023 | 03:19.0 | 302229,752  | 247892,380   | 1344103   | 1316187   | 3     | 0,343   | 0,217           | 24         |
+| 8/10/2023 | 10:53.0 | 301981,062  | 248881,942   | 1547867   | 1520018   | 3     | 0,263   | 0,137           | 26         |
+| 8/10/2023 | 58:14.0 | 301798,636  | 248108,698   | 1446887   | 1419024   | 3     | 0,19    | 0,117           | 4          |
+| 8/10/2023 | 09:31.0 | 301847,911  | 248155,130   | 1446869   | 1419003   | 3     | 0,364   | 0,186           | 6          |
+| 8/10/2023 | 31:22.0 | 301868,008  | 248170,170   | 1446827   | 1418960   | 3     | 0,147   | 0,072           | 7          |
+| 8/10/2023 | 30:20.0 | 301875,048  | 248297,576   | 1452434   | 1424571   | 3     | 0,235   | 0,161           | 8          |
+| 8/10/2023 | 00:47.0 | 301968,070  | 248386,332   | 1451916   | 1424048   | 4     | 0,235   | 0,09            | 9          |
+| 8/11/2023 | 58:29.0 | 301263,276  | 246688,966   | 1308378   | 1280506   | 4     | 0,656   | 0,64            | 17         |
+| 8/11/2023 | 40:23.0 | 301456,505  | 246350,882   | 1292738   | 1264830   | 2     | 0,054   | 0,055           | 18         |
+| 8/11/2023 | 04:19.0 | 301430,773  | 246394,964   | 1296034   | 1268131   | 2     | 0,077   | 0,064           | 19         |
+| 8/11/2023 | 30:58.0 | 301364,741  | 246498,245   | 1300102   | 1272211   | 4     | 0,364   | 0,259           | 20         |
+| 8/11/2023 | 34:20.0 | 301586,893  | 247430,776   | 1319567   | 1291696   | 5     | 0,604   | 0,323           | 27         |
+
+: GNSS data corrected in Grafnav {#tbl-gnss}
+:::
 
 ## Chunk alignment
 
@@ -175,7 +206,7 @@ Unlike global alignment, fine registration methods require two point clouds that
 
 **Point-to-point ICP**
 
-The Iterative Closest Point (ICP) registration method using the point-to-point variant was introduced by Besl and McKay (1992). This iterative algorithm consists of two stages in each iteration:   
+The Iterative Closest Point (ICP) registration method using the point-to-point variant was introduced by Besl and McKay (1992). This iterative algorithm consists of two stages in each iteration:
 
 -   First, for each point in the source point cloud, it searches for the closest point in the target point cloud.
 -   Second, it attempts to find a transformation that minimizes the distance between the corresponding points.
