@@ -81,11 +81,11 @@ According to the Atlas of Colombia (@igacatlas), the region experiences an avera
 The daily time series recorded at the Párraga station exhibits a range of maximum daily precipitation values, varying between 0 mm and 95 mm. The highest recorded value, 94.8 mm, was documented on January 9th, which coincided with the onset of the landslide event (@fig-daily). The cumulative rainfall data is meticulously computed over the 30-day period leading up to the triggering of the landslide, revealing an impressive total rainfall accumulation of 539.8 millimeters recorded up to January 9, 2023 (@fig-acc).
 
 ::: {layout-ncol="1"}
-![Total daily rainfall at the Parraga meteorological station.](DailyRainfall.png){#fig-daily fig-align="center"}
+![Total monthly rainfall at the Parraga meteorological station over the past 20 years.](monthlyPre.png){#fig-daily fig-align="center"}
 :::
 
 ::: {layout-ncol="1"}
-![Total daily accumulated rainfall at the Parraga meteorological station.](AccDailyRainfall.png){#fig-acc fig-align="center"}
+![Total daily accumulated rainfall at the Parraga meteorological station.](DailyRainfall.png){#fig-acc fig-align="center"}
 :::
 
 # Methods
@@ -161,12 +161,19 @@ To accurately reference the point clouds, a series of natural markers were estab
 
 Following the download of raw data from the Trimble receiver, the post-processing software GrafNav was employed. GrafNav is an advanced GNSS post-processing suite that supports kinematic and static analysis with an advanced processing engine for GPS, GLONASS, and BeiDou signals. To refine the data, corrections were applied using the Popayan station (POPA), which is the station nearest to the collection site. The required data were acquired from the Colombian open data portal (https://www.colombiaenmapas.gov.co/). Both the RINEX files from the field-surveyed markers and the permanent station were inputted into GrafNav to execute the correction process. The precision-adjusted positions of the markers are shown in @Tbl-gnss and @fig-gnssgraf.
 
-
-
 ::: {layout-ncol="1"}
 
 ![Points depict the resulting standard deviation for horizontal and height measurements, while bars illustrate a quality metric established by GrafNav.](GNSS_grafnav.png){#fig-gnssgraf fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
 :::
+
+As depicted in @fig-gnssgraf, both the resulting horizontal and vertical standard deviations are below 0.656 meters, with mean values of 0.26 and 0.14 meters, respectively. Achieving accuracy at the centimeter level indicates favorable results. However, a metric of quality provided by Grafnav offers additional insight. This metric assigns values as follows:
+
+- Quality 1: Represents a fixed integer solution with excellent satellite geometry.
+- Quality 2-3: Indicates either fixed integers with marginal geometry or converging float solutions.
+- Quality 4-5: Suggests qualities akin to those of DGPS.
+- Quality 6: Represents a coarse acquisition (C/A) only solution.
+
+The majority of solutions fall within the quality range of 2-3, with one solution (marker 1) exhibiting a very good quality of 1 and another (marker 10) displaying a poor quality of 6. All solutions showed satisfactory results and were subsequently utilized in the following step, which involvs the precise alignment of point clouds based on markers. 
 
 ::: table
 | **Date**  | GPSTime | **Easting** | **Northing** | **H-Ell** | **H-MSL** | **Q** | SDHoriz | **SDHeigh (m)** | **Marker** |

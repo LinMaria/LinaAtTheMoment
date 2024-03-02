@@ -289,8 +289,8 @@ background-size: cover;
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
 <div id="fig-daily" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="DailyRainfall.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;5: Total daily rainfall at the Parraga meteorological station.</figcaption>
+<p><img src="monthlyPre.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;5: Total monthly rainfall at the Parraga meteorological station over the past 20 years.</figcaption>
 </figure>
 </div>
 </div>
@@ -301,7 +301,7 @@ background-size: cover;
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
 <div id="fig-acc" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="AccDailyRainfall.png" class="img-fluid figure-img"></p>
+<p><img src="DailyRainfall.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Figure&nbsp;6: Total daily accumulated rainfall at the Parraga meteorological station.</figcaption>
 </figure>
 </div>
@@ -529,6 +529,14 @@ background-size: cover;
 </div>
 </div>
 </div>
+<p>As depicted in <a href="#fig-gnssgraf">Figure&nbsp;11</a>, both the resulting horizontal and vertical standard deviations are below 0.656 meters, with mean values of 0.26 and 0.14 meters, respectively. Achieving accuracy at the centimeter level indicates favorable results. However, a metric of quality provided by Grafnav offers additional insight. This metric assigns values as follows:</p>
+<ul>
+<li>Quality 1: Represents a fixed integer solution with excellent satellite geometry.</li>
+<li>Quality 2-3: Indicates either fixed integers with marginal geometry or converging float solutions.</li>
+<li>Quality 4-5: Suggests qualities akin to those of DGPS.</li>
+<li>Quality 6: Represents a coarse acquisition (C/A) only solution.</li>
+</ul>
+<p>The majority of solutions fall within the quality range of 2-3, with one solution (marker 1) exhibiting a very good quality of 1 and another (marker 10) displaying a poor quality of 6. All solutions showed satisfactory results and were subsequently utilized in the following step, which involvs the precise alignment of point clouds based on markers.</p>
 <div class="table">
 <div id="tbl-gnss" class="anchored">
 <table class="table">
