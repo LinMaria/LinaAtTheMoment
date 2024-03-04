@@ -44,7 +44,7 @@ The study area is situated within the western range of the Colombian Andes, a re
 
 As depicted in Figure @fig-sarea, the area has a historical record of being affected by landslides of varying magnitudes. However, the Rosas landslide, which is the focal point of our study, stands out as the largest landslide identified in the surrounding region since 1990.
 
-## Geological setting
+**Geological setting**
 
 The geological setting of the study area is profoundly influenced by its location within the Northern Andes, where the convergence of three tectonic plates—the Nazca, Caribbean, and South American plates—gives rise to active N-NE faulting within the Andean block. This convergence, with the Nazca plate moving eastward relative to northwestern South America at a rate of 6 cm/yr, leads to the formation of the Colombia-Trench to the west and the mountain range of the Colombian Andes @pulido2003seismotectonics. Within the Colombian Andes, three distinct mountain ranges—the Western, Central, and Eastern Cordillera—converge southward into a unified range, shaped by deformation and faulting resulting from the interaction of these tectonic plates @taboada2000geodynamics. The study area, encompassing the upper Patía River basin, is situated at the southern Colombian Andes' convergence point between the Western and Central Cordilleras. Here, the Western Cordillera rises dramatically from the Pacific Coastal Plain on its western flank, while to the east, it is separated from the Central Cordillera by the Cauca-Patia valleys spanning a distance of approximately 500 km. The Cauca-Patia valley, resembling a graben-like structure, is characterized by an asymmetric tilt and is filled with Tertiary-Quaternary continental clastics and volcanics. Bounded by the Cauca fault zone to the west and the Romeral fault zone to the east, this depression effectively separates the oceanic Western Cordillera from the ancient crystalline Central Cordillera (@fig-geomap).
 
@@ -66,15 +66,36 @@ The landslide displays distinct patterns of movement and failure mechanisms acro
 ![Identifiable characteristics across the crown, body, and toe of the landslide: 1) A curved concave rupture surface creating a scarp measuring up to 20 meters in height. 2) Presence of tilted blocks, subsidence, and formation of cracks. 3) Occurrence of translational slides and debris flows.](landslide-detail.jpg){#fig-landetail fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
 :::
 
-**Geology and failure surface**
+## Geology and failure surface
 
-The initial phase of the mass movement was characterized by a rotational slide, evidenced by a semicircular curved and concave upward rupture surface. This phase exposed a vertical scarp reaching heights of up to 20 meters, composed of alternating layers of residual ash soils and pyroclastic flows from the Galeón Formation. Subsequently, a portion of the body adjacent to the crown tilted backward due to the concavity of the failure surface, resulting in ground subsidence. When the central region of the landslide became fully saturated with water, copious flows of earth and rock emanated from both sides of the landslide, as well as from its center.
+The initial phase of the mass movement was characterized by a rotational slide, evidenced by a semicircular curved and concave upward rupture surface. This phase exposed a steep slope scarp reaching heights of up to 40 meters (@InformeVisitaEmergencia), composed of alternating layers of residual ash soils and pyroclastic flows from the Galeón Formation. Subsequently, a portion of the body adjacent to the crown tilted backward due to the concavity of the failure surface, resulting in ground subsidence. When the central region of the landslide became fully saturated with water, copious flows of earth and rock emanated from both sides of the landslide, as well as from its center.
 
-In the microbasin of Chontaduro creek, a geological sequence unfolds, comprising both epiclastic and volcanic rocks attributed to the Galeón Formation (TQpg). Notably, these formations are prominently exposed in areas such as Cerro Broncazo and its environs, encompassing the Quilcacé and Esmita rivers. In these regions, the volcaniclastic deposits can attain substantial thicknesses, reaching up to 800 meters.
+In the microbasin of Chontaduro creek, a geological sequence unfolds, comprising both epiclastic and volcanic rocks attributed to the Galeón Formation (TQpg). Notably, these formations are prominently exposed in areas such as Cerro Broncazo and its environs, encompassing the Quilcacé and Esmita rivers. In these regions, the volcaniclastic deposits can attain substantial thicknesses, reaching up to 800 meters (SGC rosas 25k). 
 
-This geological sequence stands out due to its distinctive characteristics, featuring abrupt scarps and gently sloping layers. These geological features are attributed by researchers to recent tectonic movements associated with the Mosquerillo-La Tetilla fault, a component of the Romeral Fault System.
+::: {layout-ncol="1"}
+![Lithological sequence and unit details observed at the crown of the landslide](Slide4.jpg){#fig-litho fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
+:::
 
-**Rainfall as trigger mechanism**
+The scarp of the crown provided a clear view of the sequential arrangement of materials comprising the mobilized mass. Illustrated in @fig-litho, from bottom to top, the lithological units are delineated as follows:
+
+- The base layer showcases rocks attributed to well-selected, sandy, hyperconcentrated lahar deposits, linked with the Galeón formation.
+- Directly above lies a layer of clast-supported pyroclastic flows, featuring rounded volcanic rock clasts with subtle orientation indicative of flow, ensconced within a reddish sandy volcanic ash matrix.
+- Progressing upward, there exist lenticular alluvial and colluvial deposits, resulting from the erosion and transportation of various units within the Galeón formation.
+- Finally, at the apex of the sequence, residual soils stemming from both transport deposits and pyroclastic flows are evident.
+
+::: {layout-ncol="1"}
+![Panoramic view of landslide crown scarp. Blue dashed line depicting the water horizon](Slide3.jpg){#fig-waterhor fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
+:::
+
+As depicted in @fig-waterhor, a highly saturated surface conducive to water flow manifests between the hyperconcentrated flow layer and the pyroclastic flow layer. The permeability of the latter, coupled with the slight permeability of the underlying layer, facilitates water flow across this contact surface. Exhibiting horizontal continuity, this surface could be associated with the sliding surface of the mass movement.Recurrence of the poorly permeable hyperconcentrated lahar layer is notable at the base of the slide, indicating a seamless continuation of the water-saturated surface from the crown to the landslide's base.
+
+Furthermore, noteworthy is the close proximity of the landslide's crown to the 'Alto de las Yerbas' fault line, as referenced in the technical report on Landslide Hazard Zoning by the SGC (2020), detailed in @fig-geoland. Findings from the present study imply that structural and lithological factors, compounded by intense rainfall, were the primary catalysts for the occurrence of this significant landslide.
+
+::: {layout-ncol="1"}
+![Geological surface units and main fault in the landslide site. Sourced from SGC(2020)](geolandslide.png){#fig-geoland fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
+:::
+
+## Rainfall as trigger mechanism
 
 According to the Atlas of Colombia (@igacatlas), the region experiences an average annual rainfall of 2,000 mm at the summit of the Central Cordillera and 3,000 mm at the summit of the Western Cordillera. Rainfall patterns indicate a distinct summer season during June, July, August, and September, followed by a rainy season during the remaining months. The precipitation data for the study area was obtained from the Párraga weather station (Station Code: 52010050), which is managed by IDEAM (Instituto de Hidrología, Meteorología y Estudios Ambientales de Colombia). The time series analyzed encompasses 33 years of recorded data, spanning from 1990 to 2023 (@fig-annrain). The study region experiences two distinct rainy seasons: the first occurs from January to May, characterized by relatively lower rainfall compared to the second rainy season, which typically occurs between October and December.
 
@@ -84,8 +105,10 @@ The daily time series recorded at the Párraga station exhibits a range of maxim
 ![Total monthly rainfall at the Parraga meteorological station over the past 20 years.](monthlyPre.png){#fig-daily fig-align="center"}
 :::
 
+
+
 ::: {layout-ncol="1"}
-![Total daily accumulated rainfall at the Parraga meteorological station.](DailyRainfall.png){#fig-acc fig-align="center"}
+![Total daily and accumulated rainfall at the Parraga meteorological station.](DailyRainfall.png){#fig-acc fig-align="center"}
 :::
 
 # Methods
