@@ -2,7 +2,7 @@
 
 # website settings
 website:
-  title: "Lina Maria Pérez"                                # Your name
+  title: "Lina María Pérez"                                # Your name
   description: "Healing the soul through the experience and love of the natural world"   # A brief slogan (optional)
   image: img/logo.png
   favicon: img/favicon.png
