@@ -70,18 +70,18 @@ The landslide displays distinct patterns of movement and failure mechanisms acro
 
 The initial phase of the mass movement was characterized by a rotational slide, evidenced by a semicircular curved and concave upward rupture surface. This phase exposed a steep slope scarp reaching heights of up to 40 meters (@InformeVisitaEmergencia), composed of alternating layers of residual ash soils and pyroclastic flows from the Galeón Formation. Subsequently, a portion of the body adjacent to the crown tilted backward due to the concavity of the failure surface, resulting in ground subsidence. When the central region of the landslide became fully saturated with water, copious flows of earth and rock emanated from both sides of the landslide, as well as from its center.
 
-In the microbasin of Chontaduro creek, a geological sequence unfolds, comprising both epiclastic and volcanic rocks attributed to the Galeón Formation (TQpg). Notably, these formations are prominently exposed in areas such as Cerro Broncazo and its environs, encompassing the Quilcacé and Esmita rivers. In these regions, the volcaniclastic deposits can attain substantial thicknesses, reaching up to 800 meters (SGC rosas 25k). 
+In the microbasin of Chontaduro creek, a geological sequence unfolds, comprising both epiclastic and volcanic rocks attributed to the Galeón Formation (TQpg). Notably, these formations are prominently exposed in areas such as Cerro Broncazo and its environs, encompassing the Quilcacé and Esmita rivers. In these regions, the volcaniclastic deposits can attain substantial thicknesses, reaching up to 800 meters (SGC rosas 25k).
 
 ::: {layout-ncol="1"}
 ![Lithological sequence and unit details observed at the crown of the landslide](Slide4.jpg){#fig-litho fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
 :::
 
-The scarp of the crown provided a clear view of the sequential arrangement of materials comprising the mobilized mass. Illustrated in @fig-litho, from bottom to top, the lithological units are delineated as follows:
+The scarp of the crown provided a clear view of the sequential arrangement of materials comprising the mobilized mass. Illustrated in @fig-litho and @fig-waterhor, from bottom to top, the lithological units are delineated as follows:
 
-- The base layer showcases rocks attributed to well-selected, sandy, hyperconcentrated lahar deposits, linked with the Galeón formation.
-- Directly above lies a layer of clast-supported pyroclastic flows, featuring rounded volcanic rock clasts with subtle orientation indicative of flow, ensconced within a reddish sandy volcanic ash matrix.
-- Progressing upward, there exist lenticular alluvial and colluvial deposits, resulting from the erosion and transportation of various units within the Galeón formation.
-- Finally, at the apex of the sequence, residual soils stemming from both transport deposits and pyroclastic flows are evident.
+-   The base layer showcases rocks attributed to well-selected, sandy, hyperconcentrated lahar deposits, linked with the Galeón formation.
+-   Directly above lies a layer of clast-supported pyroclastic flows, featuring rounded volcanic rock clasts with subtle orientation indicative of flow, ensconced within a reddish sandy volcanic ash matrix.
+-   Progressing upward, there exist lenticular alluvial and colluvial deposits, resulting from the erosion and transportation of various units within the Galeón formation.
+-   Finally, at the apex of the sequence, residual soils stemming from both transport deposits and pyroclastic flows are evident.
 
 ::: {layout-ncol="1"}
 ![Panoramic view of landslide crown scarp. Blue dashed line depicting the water horizon](Slide3.jpg){#fig-waterhor fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
@@ -89,23 +89,23 @@ The scarp of the crown provided a clear view of the sequential arrangement of ma
 
 As depicted in @fig-waterhor, a highly saturated surface conducive to water flow manifests between the hyperconcentrated flow layer and the pyroclastic flow layer. The permeability of the latter, coupled with the slight permeability of the underlying layer, facilitates water flow across this contact surface. Exhibiting horizontal continuity, this surface could be associated with the sliding surface of the mass movement.Recurrence of the poorly permeable hyperconcentrated lahar layer is notable at the base of the slide, indicating a seamless continuation of the water-saturated surface from the crown to the landslide's base.
 
-Furthermore, noteworthy is the close proximity of the landslide's crown to the 'Alto de las Yerbas' fault line, as referenced in the technical report on Landslide Hazard Zoning by the SGC (2020), detailed in @fig-geoland. Findings from the present study imply that structural and lithological factors, compounded by intense rainfall, were the primary catalysts for the occurrence of this significant landslide.
+Furthermore, noteworthy is the close proximity of the landslide's crown to the 'Alto de las Yerbas' fault line, as referenced in the technical report on Landslide Hazard Zoning by the @sgc2020, detailed in @fig-geoland. Findings from the present study imply that structural and lithological factors, compounded by intense rainfall, were the primary catalysts for the occurrence of this significant landslide.
 
 ::: {layout-ncol="1"}
-![Geological surface units and main fault in the landslide site. Sourced from SGC(2020)](geolandslide.png){#fig-geoland fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
+![Geological surface units and main fault in the landslide site. Sourced from @sgc2020](geolandslide.png){#fig-geoland fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
 :::
 
 ## Rainfall as trigger mechanism
 
-According to the Atlas of Colombia (@igacatlas), the region experiences an average annual rainfall of 2,000 mm at the summit of the Central Cordillera and 3,000 mm at the summit of the Western Cordillera. Rainfall patterns indicate a distinct summer season during June, July, August, and September, followed by a rainy season during the remaining months. The precipitation data for the study area was obtained from the Párraga weather station (Station Code: 52010050), which is managed by IDEAM (Instituto de Hidrología, Meteorología y Estudios Ambientales de Colombia). The time series analyzed encompasses 33 years of recorded data, spanning from 1990 to 2023 (@fig-annrain). The study region experiences two distinct rainy seasons: the first occurs from January to May, characterized by relatively lower rainfall compared to the second rainy season, which typically occurs between October and December.
+According to the Atlas of Colombia (@igacatlas), the region experiences an average annual rainfall of 2,000 mm at the summit of the Central Cordillera and 3,000 mm at the summit of the Western Cordillera. Rainfall patterns indicate a distinct summer season during June, July, August, and September, followed by a rainy season during the remaining months. The precipitation data for the study area was obtained from the Párraga weather station (Station Code: 52010050), which is managed by IDEAM (Instituto de Hidrología, Meteorología y Estudios Ambientales de Colombia). The time series analyzed encompasses 33 years of recorded data, spanning from 1990 to 2023 (@fig-monthly shows the last 20 years of data). As shown in @fig-monthly, the study area experiences two distinct rainy seasons: the first occurs from January to May, characterized by relatively lower rainfall compared to the second rainy season, which typically occurs between October and December.
 
-The daily time series recorded at the Párraga station exhibits a range of maximum daily precipitation values, varying between 0 mm and 95 mm. The highest recorded value, 94.8 mm, was documented on January 9th, which coincided with the onset of the landslide event (@fig-daily). The cumulative rainfall data is meticulously computed over the 30-day period leading up to the triggering of the landslide, revealing an impressive total rainfall accumulation of 539.8 millimeters recorded up to January 9, 2023 (@fig-acc).
+An important observation to highlight is that within the last 20 years of recorded data, the rainfall during the rainy season of December 2022, preceding the event, was notably exceptional. In November 2022 alone, precipitation levels reached a record high of up to 720 mm, marking it as the highest recorded rainfall within the observed period.
 
 ::: {layout-ncol="1"}
-![Total monthly rainfall at the Parraga meteorological station over the past 20 years.](monthlyPre.png){#fig-daily fig-align="center"}
+![Visualization of total monthly rainfall at the Parraga meteorological station spanning the past 20 years. Blue bars represent months with rainfall above the mean, while green bars denote months with precipitation below the mean.](monthlyPre.png){#fig-monthly fig-align="center"}
 :::
 
-
+In the other hand, the daily time series recorded at the Párraga station exhibits a range of maximum daily precipitation values, varying between 0 mm and 95 mm. The highest recorded value, 94.8 mm, was documented on January 9th, which coincided with the onset of the landslide event (@fig-acc). The cumulative rainfall data was computed over the last 60 days leading up to the triggering of the landslide, revealing an impressive total rainfall accumulation of 2309.3 millimeters recorded up to January 9, 2023 (@fig-acc).
 
 ::: {layout-ncol="1"}
 ![Total daily and accumulated rainfall at the Parraga meteorological station.](DailyRainfall.png){#fig-acc fig-align="center"}
@@ -136,8 +136,8 @@ Sixteen distinct chunks were produced by importing photographs from selected fli
 |--------------|---------|-----------|------------|-----------|
 | 1/14/2023    | 1491    | 880,613   | 19 markers | X         |
 | 1/17/2023    | 567     | 436,618   | 4 markers  |           |
-| 1/18-19/2023 | 878     | 1,666,175 | 17 markers | X         |
-| 1/19/2023    | 369     | 387,054   |            |           |
+| 1/18-19/2023 | 878     | 1,666,175 | 17 markers |           |
+| 1/19/2023    | 369     | 387,054   |            | X         |
 | 1/20/2023    | 196     | 194,101   |            |           |
 | 1/26/2023    | 332     | 352,573   |            |           |
 | 1/30/2023    | 321     | 351,487   |            |           |
@@ -145,11 +145,11 @@ Sixteen distinct chunks were produced by importing photographs from selected fli
 | 2/6/2023     | 331     | 336,810   |            |           |
 | 2/11/2023    | 576     | 627,729   |            |           |
 | 2/16/2023    | 329     | 346,862   |            |           |
-| 2/19/2023    | 442     | 459,783   |            | X         |
-| 3/6/2023     | 330     | 324,661   |            | X         |
+| 2/19/2023    | 442     | 459,783   |            |           |
+| 3/6/2023     | 330     | 324,661   |            |           |
 | 3/21/2023    | 331     | 352.909   |            |           |
 | 3/30/2023    | 328     | 327,605   |            |           |
-| 5/18/2023    | 333     | 243,261   |            | X         |
+| 5/18/2023    | 333     | 243,261   |            |           |
 
 : Point clouds generated in *Agisoft* {#tbl-chunks}
 :::
@@ -185,18 +185,17 @@ To accurately reference the point clouds, a series of natural markers were estab
 Following the download of raw data from the Trimble receiver, the post-processing software GrafNav was employed. GrafNav is an advanced GNSS post-processing suite that supports kinematic and static analysis with an advanced processing engine for GPS, GLONASS, and BeiDou signals. To refine the data, corrections were applied using the Popayan station (POPA), which is the station nearest to the collection site. The required data were acquired from the Colombian open data portal (https://www.colombiaenmapas.gov.co/). Both the RINEX files from the field-surveyed markers and the permanent station were inputted into GrafNav to execute the correction process. The precision-adjusted positions of the markers are shown in @Tbl-gnss and @fig-gnssgraf.
 
 ::: {layout-ncol="1"}
-
 ![Points depict the resulting standard deviation for horizontal and height measurements, while bars illustrate a quality metric established by GrafNav.](GNSS_grafnav.png){#fig-gnssgraf fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
 :::
 
 As depicted in @fig-gnssgraf, both the resulting horizontal and vertical standard deviations are below 0.656 meters, with mean values of 0.26 and 0.14 meters, respectively. Achieving accuracy at the centimeter level indicates favorable results. However, a metric of quality provided by Grafnav offers additional insight. This metric assigns values as follows:
 
-- Quality 1: Represents a fixed integer solution with excellent satellite geometry.
-- Quality 2-3: Indicates either fixed integers with marginal geometry or converging float solutions.
-- Quality 4-5: Suggests qualities akin to those of DGPS.
-- Quality 6: Represents a coarse acquisition (C/A) only solution.
+-   Quality 1: Represents a fixed integer solution with excellent satellite geometry.
+-   Quality 2-3: Indicates either fixed integers with marginal geometry or converging float solutions.
+-   Quality 4-5: Suggests qualities akin to those of DGPS.
+-   Quality 6: Represents a coarse acquisition (C/A) only solution.
 
-The majority of solutions fall within the quality range of 2-3, with one solution (marker 1) exhibiting a very good quality of 1 and another (marker 10) displaying a poor quality of 6. All solutions showed satisfactory results and were subsequently utilized in the following step, which involvs the precise alignment of point clouds based on markers. 
+The majority of solutions fall within the quality range of 2-3, with one solution (marker 1) exhibiting a very good quality of 1 and another (marker 10) displaying a poor quality of 6. All solutions showed satisfactory results and were subsequently utilized in the following step, which involvs the precise alignment of point clouds based on markers.
 
 ::: table
 | **Date**  | GPSTime | **Easting** | **Northing** | **H-Ell** | **H-MSL** | **Q** | SDHoriz | **SDHeigh (m)** | **Marker** |
@@ -230,30 +229,85 @@ The majority of solutions fall within the quality range of 2-3, with one solutio
 
 For a precise alignment of point clouds, the process begins with the correction of a designated reference point cloud; in this case, the cloud dated 01/14/2023 is used. The coordinates of the markers are revised using the data acquired from the recent field campaign. Following this update, camera parameters are re-optimized, and a new dense point cloud is generated. This newly referenced point cloud then serves as the reference for aligning subsequent point clouds through the point-based method, a technique available to align chunks within *Agisoft*.
 
+Despite this registration, some misalignment persist. To address this, some pre-filtering steps and global registration methos are appied to subsequently apply a meticulous registration is conducted using the Iterative Closest Point (ICP) method, elaborated in the following sections.
+
+## Pre-processing and Global registration
+
+The registration process was exclusively conducted within the stable zones identified within the study area. By avoiding regions experiencing landslide activity, where the terrain undergoes constant changes, we ensure a precise correlation between zones exhibiting minimal alterations over time. The stable areas from both the reference and target point clouds were manually selected and extracted using *Cloud Compare*. 
+
+Subsequently, pre-registration steps were performed on these stable area point clouds, including:
+
+1. **Initial Filtering Step**: This involved the removal of statistical outliers using an Open3D function. Points that deviate significantly from the average distance to their neighbors were identified as outliers and removed. This step was iterated until all points not forming a continuous surface were eliminated.
+
+2. **Nearest Neighbor Distance Calculation**: Next, KDtree was employed to compute the nearest neighbor distances between both point clouds (@fig-initialdist). In some regions where there was a lack of overlapping between the point clouds, resulting distances exceeded 3 meters. To address this issue and ensure complete overlap, points farther than 3 meters from one point cloud to the other were filtered out.
+
+::: {layout-ncol="1"}
+![Nearest neighbor distances between both point clouds.](initialdistance.png){#fig-initialdist fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
+:::
+
+After the initial filtering step, the alignment process proceeds with an initial coarse alignment to bring the point clouds into close proximity. This alignment method incorporates feature identification to refine the search for corresponding points. This process generally involves two key steps:
+
+1. **Utilizing Fast Point Feature Histograms (FPFH)**: FPFH is a technique employed in 3D registration, which aims to align multiple 3D point clouds. FPFH analyzes each point in a 3D point cloud by examining its surrounding points. It computes a histogram describing the geometric features of each point based on its neighbors, encompassing attributes like angle and distance between neighboring points. FPFH facilitates the matching of points across different 3D scenes by leveraging the geometric properties of each point and its surroundings (@rusu20113d).
+
+2. **Application of *registration_ransac_based_on_feature_matching* Function**: Open3D's ``registration_ransac_based_on_feature_matching`` function implements the RANSAC (Random Sample Consensus) algorithm tailored for point cloud registration via feature matching. RANSAC randomly selects a minimal subset of points from both point clouds to estimate a transformation, such as rotation and translation, between them (@fischler1981random). Subsequently, the estimated transformation is evaluated by applying it to all feature correspondences obtained in the previous step, and the number of inliers—correspondences consistent with the estimated transformation—is tallied. 
+
+In essence, these refined alignment techniques enable the accurate registration of point clouds by iteratively estimating transformations based on feature correspondences, thereby enhancing the robustness and accuracy of the alignment process. Although the global alignment has improved the distribution of distances, as depicted in @fig-global, with a mean value of less than 2 meters, the Global Registration Modified Hausdorff Distance has increased to 3.75 meters. This discrepancy underscores the necessity for a more precise registration process to minimize the offset between the two point clouds.
+
+::: {layout-ncol="1"}
+![Nearest neighbor distances between both point clouds before and after global registration.](globalregistration.png){#fig-global fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
+:::
+
 ## ICP registration
 
 Unlike global alignment, fine registration methods require two point clouds that already have a rough correspondence. The Iterative Closest Point (ICP) algorithm is commonly used for local refinement and has two main variants:
 
+
 **Point-to-point ICP**
 
-The Iterative Closest Point (ICP) registration method using the point-to-point variant was introduced by Besl and McKay (1992). This iterative algorithm consists of two stages in each iteration:
+The Iterative Closest Point (ICP) algorithm, introduced in the early 1990s by various authors (@besl1992method, @chen1992object, @zhang1994iterative), stands out among the myriad registration methods proposed in the literature. It has become one of the most well-known for efficiently registering two 2D or 3D point sets under Euclidean (rigid) transformation.
 
--   First, for each point in the source point cloud, it searches for the closest point in the target point cloud.
--   Second, it attempts to find a transformation that minimizes the distance between the corresponding points.
+The process follows a simple concept (@yang2015go):
 
-These two processing stages are repeated until convergence (Salvi et al., 2007).
+1.  Begin with an initial transformation involving rotation and translation.
 
-**Point-to-plane ICP**
+2.  Alternate between two steps:
 
-The point-to-plane variant of the ICP algorithm takes into account that scanned objects are not individual points, but surfaces. Unlike point-to-point, which tries to minimize the distance between individual points, the point-to-plane method assumes that points in the source point cloud are generally on a surface of the target point cloud. This accounts for the fact that the source and target point clouds are not necessarily identical.
+    a.  Establish closest-point correspondences under the current transformation.
 
-The general processing procedure of the point-to-plane method is similar to that of the point-to-point approach. However, instead of searching for the closest points between the source and target point clouds, the method calculates the intersection of the point normal in the source point cloud with the tangent plane at its corresponding point in the target point cloud. Then, the algorithm attempts to find a transformation that minimizes the distance between points and the tangent planes at its correspondence points (Low, 2004). This process is repeated until convergence.
+    b.  Estimate a new transformation using these correspondences.
 
-Pulli (1999) emphasize the advantages of the point-to-plane method compared to the point-to-point method. Some of the arguments and findings are:
+3.  Repeat steps 2a and 2b until convergence is achieved.
 
--   The point-to-plane method converges an order of magnitude faster than the point-to-point method.
--   The point-to-point method typically requires at least ten times more point matching and alignment iterations than the point-to-plane method.
--   The point-to-plane method is not significantly slowed down by false point pairs since each point can slide along the tangent plane of its corresponding point.
+Notably, the point-to-point ICP method is capable of directly processing the raw point sets without regard to their inherent characteristics, such as distribution, density, and noise level.
+
+
+The ``registration_icp`` function of *Open3D* aligns both stable-area point clouds using the global transformation matrix from the previous step via ICP registration. subsequently, we use the ``evaluate_registration`` function that calculates two key metrics: **Fitness**, that measures overlapping area (# of inlier correspondences / # of points in target), higher values indicate better alignment. And **Inlier RMSE**, that measures RMSE of all inlier correspondences with lower values indicating better alignment.
+
+As depicted in @fig-finalreg, the final registration demonstrates excellent performance, with mean distances smaller than 50 centimeters. Subsequently, the final transformation matrix derived from this registration is applied to the full dataset, encompassing both stable and landslide areas.
+
+::: {layout-ncol="1"}
+![Nearest neighbor distances between both point clouds before and after global registration and ICP registration.](finalregistration.png){#fig-finalreg fig-alt="Rosas, Cauca - Colombia" fig-align="center"}
+:::
+
+In @tbl-distance, a comprehensive overview of the effectiveness of various registration methods in enhancing the alignment of point clouds is provided. By meticulously examining the metrics presented in the table, including distances between corresponding points before and after registration, the impact of each method on the alignment quality becomes evident.
+
+::: table
+
+|                         | Hausdorff Distance | Modified Hausdorff Distance |
+|-------------------------|:------------------:|:---------------------------:|
+| Before globar alignment |       154.51       |         3.312067224         |
+| After global alaignment |       145.26       |             3.75            |
+|        After ICP        |          -         |             2.41            |
+
+: Hausdorff and Modified Hausdorff distance calculated throughout the registration process {#tbl-distance}
+:::
+
+# Key project insights
+
+- Regarding the GNSS survey, various points for improvement were identified. Allocating more time to conduct the survey offers the opportunity to collect data under optimal conditions, ensuring minimal cloud cover for improved satellite connectivity. It's highly recommended to avoid locations with high environmental noise, although in densely populated areas like the study site, finding such sites proved challenging. Natural landmarks, initially identified using high-resolution orthophotos, were utilized; however, a more efficient method for accurately georeferencing UAV-generated models involves setting markers during flight execution. Some markers selected during pre-field preparations had disappeared or changed by the time of the GNSS survey, posing a limitation to the method.
+
+- The heterogeneity in data acquisition, spanning different UAV devices, flight heights, number of photos captured, varying point density within and between point clouds, and distinct spatial extents, poses challenges during post-processing and alignment.
+  
 
 # References
 
